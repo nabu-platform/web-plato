@@ -4,7 +4,7 @@
         "utilities": {
             "include-media.json": {
                 "type": "bundle",
-                "url": "include-media/bundle.json"
+                "url": "utilities/include-media/bundle.json"
             }
         },
         "tokens": {
