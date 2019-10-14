@@ -1,0 +1,15 @@
+// ---------------------------------------------- spacing scale
+$spacing-scale-base: $base-font-size !default; // 1rem
+
+$spacing-scale-xxxs: calc(#{$spacing-scale-base} / 16) !default;
+$spacing-scale-xxs: calc(#{$spacing-scale-base} / 8) !default;
+$spacing-scale-xs: calc(#{$spacing-scale-base} / 4) !default;
+$spacing-scale-s: calc(#{$spacing-scale-base} / 2) !default;
+$spacing-scale-sm: calc(#{$spacing-scale-base} * 0.75) !default;
+$spacing-scale-m: #{$spacing-scale-base} !default;
+$spacing-scale-ml: calc(#{$spacing-scale-base} * 1.5) !default;
+$spacing-scale-l: calc(#{$spacing-scale-base} * 2) !default;
+$spacing-scale-xl: calc(#{$spacing-scale-base} * 3) !default;
+$spacing-scale-xxl: calc(#{$spacing-scale-base} * 4) !default;
+$spacing-scale-xxxl: calc(#{$spacing-scale-base} * 6) !default;
+$spacing-scale-xxxxl: calc(#{$spacing-scale-base} * 8) !default;

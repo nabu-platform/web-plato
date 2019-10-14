@@ -1,0 +1,90 @@
+// --------------------------------------------------------- button styles
+
+button, .button, %button {
+	&.primary {
+		color: $primary-contrast;
+		@include button-background($primary-color);
+		@include button-base;
+		&.outline {
+			@include button-outline($primary-color);
+		}
+		&.ghost {
+			@include button-ghost($primary-color);
+		}
+	}
+	&.secondary {
+		color: $secondary-contrast;
+		@include button-background($secondary-color);
+		@include button-base;
+		&.outline {
+			@include button-outline($secondary-color);
+		}
+		&.ghost {
+			@include button-ghost($secondary-color);
+		}
+	}
+	&.danger {
+		color: $danger-contrast;
+		@include button-background($danger-color);
+		@include button-base;
+		&.outline {
+			@include button-outline($danger-color);
+		}
+		&.ghost {
+			@include button-ghost($danger-color);
+		}
+	}
+	&.success {
+		color: $success-contrast;
+		@include button-background($success-color);
+		@include button-base;
+		&.outline {
+			@include button-outline($success-color);
+		}
+		&.ghost {
+			@include button-ghost($success-color);
+		}
+	}
+	&.warning {
+		color: $warning-contrast;
+		@include button-background($warning-color);
+		@include button-base;
+		&.outline {
+			@include button-outline($warning-color);
+		}
+		&.ghost {
+			@include button-ghost($warning-color);
+		}
+	}
+}
+
+.button, %button {
+	@include button-base;
+	// an icon is assumed on the left
+	.icon, .fa {
+		margin-right: 0.5rem;
+	}
+	&.has-icon-right {
+		.icon, .fa {
+			margin-left: 0.5rem;
+		}
+	}
+	&.has-icon, &.has-icon-left {
+		.icon, .fa {
+			margin-right: 0.5rem;
+		}
+	}
+}
+
+a.button, %a-button {
+	@include button-ghost($neutral-color);
+	@include button-base;
+	line-height: $button-height;
+	text-transform: inherit;
+	&.primary {
+		@include button-ghost($primary-color);
+	}
+	&:hover {
+		background-color: transparent;
+	}
+}

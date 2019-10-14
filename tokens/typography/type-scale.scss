@@ -1,0 +1,182 @@
+// ---------------------------------------------- font sizes
+$font-size-base: $base-font-size !default; // 1rem
+$font-size-large: 1.25rem !default;
+$font-size-small: 0.875rem !default;
+$font-size-tiny: 0.75rem !default;
+
+/// Copy
+$font-color-copy: $font-color !default;
+$font-family-copy: $font-family !default;
+$font-line-height-copy: 1.25 !default;
+$font-weight-copy: $font-weight !default;
+
+%font-base {
+	font-size: $font-size-base; }
+
+%font-large {
+	font-size: $font-size-large; }
+
+%font-small {
+	font-size: $font-size-small; }
+
+%font-tiny {
+	font-size: $font-size-tiny; }
+
+p {
+    color: $font-color-copy;
+	font-size: $font-size-base;
+    font-weight: $font-weight-copy;
+    line-height: $font-line-height-copy;
+	&.large {
+		@extend %font-large;
+	}
+	&.small {
+		@extend %font-small;
+	}
+	&.tiny {
+		@extend %font-tiny;
+	}
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-emphasis {
+	font-weight: $font-weight-emphasis;
+}
+
+.text-cursive {
+	font-style: $font-style-cursive;
+}
+
+/// Heading
+$font-color-heading: $font-color !default;
+$font-family-heading: $font-family-alt !default;
+$font-line-height-heading: 1.25 !default;
+$font-margin-heading: 1.414em 0 0.5em !default;
+$font-weight-heading: $font-weight-emphasis !default;
+
+$font-size-heading1: 6rem !default;
+$font-size-heading2: 4rem !default;
+$font-size-heading3: 3rem !default;
+$font-size-heading4: 2rem !default;
+$font-size-heading5: 1.5rem !default;
+$font-size-heading6: 1.25rem !default;
+$font-size-heading7: 1rem !default;
+
+$font-spacing-heading1: -0.02em !default;
+$font-spacing-heading2: -0.015em !default;
+$font-spacing-heading3: -0.01em !default;
+$font-spacing-heading4: -0.01em !default;
+$font-spacing-heading5: -0.01em !default;
+$font-spacing-heading6: -0.01em !default;
+$font-spacing-heading7: -0.01em !default;
+
+/// Subheading
+$font-color-subheading: $font-color-heading !default;
+$font-family-subheading: $font-family-heading !default;
+$font-line-height-subheading: $font-line-height-heading !default;
+$font-margin-subheading: $font-margin-heading !default;
+$font-weight-subheading: $font-weight-light !default;
+
+$font-size-subheading1: $font-size-heading1 !default;
+$font-size-subheading2: $font-size-heading2 !default;
+$font-size-subheading3: $font-size-heading3 !default;
+$font-size-subheading4: $font-size-heading4 !default;
+$font-size-subheading5: $font-size-heading5 !default;
+$font-size-subheading6: $font-size-heading6 !default;
+$font-size-subheading7: $font-size-heading7 !default;
+
+$font-spacing-subheading1: $font-spacing-heading1 !default;
+$font-spacing-subheading2: $font-spacing-heading2 !default;
+$font-spacing-subheading3: $font-spacing-heading3 !default;
+$font-spacing-subheading4: $font-spacing-heading4 !default;
+$font-spacing-subheading5: $font-spacing-heading5 !default;
+$font-spacing-subheading6: $font-spacing-heading6 !default;
+$font-spacing-subheading7: $font-spacing-heading7 !default;
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+    color: $font-color-heading;
+    font-family: $font-family-heading-heading;
+	font-weight: $font-weight-heading;
+	margin: $font-margin-heading;
+}
+
+h1, .h1, %h1 {
+    font-size: $font-size-heading1;
+    letter-spacing: $font-spacing-heading1;
+	line-height: $font-line-height-heading;
+	margin-top: 0;
+}
+.sh1, %sh1 {
+    font-size: $font-size-subheading1;
+    letter-spacing: $font-spacing-subheading1;
+	line-height: $font-line-height-subheading;
+	margin-top: 0;
+}
+
+h2, .h2, %h2 {
+    font-size: $font-size-heading2;
+    letter-spacing: $font-spacing-heading2;
+	line-height: $font-line-height-heading;
+	margin-top: 0;
+}
+.sh2, %sh2 {
+    font-size: $font-size-subheading2;
+    letter-spacing: $font-spacing-subheading2;
+	line-height: $font-line-height-subheading;
+	margin-top: 0;
+}
+
+h3, .h3, %h3 {
+    font-size: $font-size-heading3;
+    letter-spacing: $font-spacing-heading3;
+	line-height: $font-line-height-heading;
+	margin-top: 0;
+}
+.sh3, %sh3 {
+    font-size: $font-size-subheading3;
+    letter-spacing: $font-spacing-subheading3;
+	line-height: $font-line-height-subheading;
+	margin-top: 0;
+}
+
+h4, .h4, %h4 {
+    font-size: $font-size-heading4;
+    letter-spacing: $font-spacing-heading4;
+	line-height: $font-line-height-heading;
+	margin-top: 0;
+}
+.sh4, %sh4 {
+    font-size: $font-size-subheading4;
+    letter-spacing: $font-spacing-subheading4;
+	line-height: $font-line-height-subheading;
+	margin-top: 0;
+}
+
+h5, .h5, %h5 {
+    font-size: $font-size-heading5;
+    letter-spacing: $font-spacing-heading5;
+	line-height: $font-line-height-heading;
+	margin-top: 0;
+}
+.sh5, %sh5 {
+    font-size: $font-size-subheading5;
+    letter-spacing: $font-spacing-subheading5;
+	line-height: $font-line-height-subheading;
+	margin-top: 0;
+}
+
+h6, .h6, %h6 {
+    font-size: $font-size-heading6;
+    letter-spacing: $font-spacing-heading6;
+	line-height: $font-line-height-heading;
+	margin-top: 0;
+}
+.sh6, %sh6 {
+    font-size: $font-size-subheading6;
+    letter-spacing: $font-spacing-subheading6;
+	line-height: $font-line-height-subheading;
+	margin-top: 0;
+}

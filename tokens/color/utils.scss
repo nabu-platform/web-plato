@@ -1,0 +1,63 @@
+$plato-color-tint-scale: (
+    primary: (
+        lightest: $color-primary-lightest,
+        lighter: $color-primary-lighter,
+        light: $color-primary-light,
+        base: $color-primary-base,
+        dark: $color-primary-dark,
+        darker: $color-primary-darker
+    ),
+    secondary: (
+        lightest: $color-secondary-lightest,
+        lighter: $color-secondary-lighter,
+        light: $color-secondary-light,
+        base: $color-secondary-base,
+        dark: $color-secondary-dark,
+        darker: $color-secondary-darker
+    ),
+    neutral: (
+        lightest: $color-neutral-lightest,
+        lighter: $color-neutral-lighter,
+        light: $color-neutral-light,
+        base: $color-neutral-base,
+        dark: $color-neutral-dark,
+        darker: $color-neutral-darker
+    ),
+    danger: (
+        lightest: $color-danger-lightest,
+        lighter: $color-danger-lightest,
+        light: $color-danger-light,
+        base: $color-danger-base,
+        dark: $color-danger-dark,
+        darker: $color-danger-dark
+    ),
+    success: (
+        lightest: $color-success-lightest,
+        lighter: $color-success-lightest,
+        light: $color-success-light,
+        base: $color-success-base,
+        dark: $color-success-dark,
+        darker: $color-success-dark
+    ),
+    warning: (
+        lightest: $color-warning-lightest,
+        lighter: $color-warning-lightest,
+        light: $color-warning-light,
+        base: $color-warning-base,
+        dark: $color-warning-dark,
+        darker: $color-warning-dark
+    )
+) !default;
+
+@function color-tint($color: "primary", $tint: "base") {
+    @if map-has-key($plato-color-tint-scale, $color) {
+        $color-scale: $map-get($plato-color-tint-scale, $color);
+        @if map-has-key($map: $color-scale, $key: $tint) {
+            @return map-get($map: $color-scale, $key: $tint);
+        }
+        @warn "Unknown tint '#{$tint}' in color-scale '#{$color}'.";
+        @return null;
+    }
+    @warn "Unknown color-scale '#{$color}'.";
+    @return null;
+}

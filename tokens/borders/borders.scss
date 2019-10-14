@@ -1,0 +1,46 @@
+// ---------------------------------------------- border styles
+
+/// Default
+$border-color: #919D9E; // neutral--base
+$border-style: solid;
+$border-width: 1px;
+$border-width-heavy: 2px;
+
+$border-color-dashed: $border-color;
+$border-style-dashed: dashed;
+$border-width-dashed: $border-width;
+
+$border: $border-width $border-style $border-color;
+$border-dashed: $border-width-dashed $border-style-dashed $border-color-dashed;
+
+/// Light
+$border-color-light: $border-color;
+$border-style-light: $border-style;
+$border-width-light: $border-width;
+
+$border-color-light-dashed: $border-color-dashed;
+$border-style-light-dashed: $border-style-dashed;
+$border-width-light-dashed: $border-width-dashed;
+
+$border-light: $border-width-light $border-style-light $border-color-light;
+$border-dashed-light: $border-width-light-dashed $border-style-light-dashed $border-color-light-dashed;
+
+/// Heavy
+$border-color-heavy: $border-color;
+$border-style-heavy: $border-style;
+$border-width-heavy: $border-width;
+
+$border-color-heavy-dashed: $border-color-dashed;
+$border-style-heavy-dashed: $border-style-dashed;
+$border-width-heavy-dashed: $border-width-dashed;
+
+$border-heavy: $border-width-heavy $border-style-heavy $border-color-heavy;
+$border-dashed-heavy: $border-width-heavy-dashed $border-style-heavy-dashed $border-color-heavy-dashed;
+
+
+// ---------------------------------------------- border radius
+$border-radius-none: none;
+$border-radius-light: 0.5rem;
+$border-radius-heavy: 1rem;
+
+$border-radius: $border-radius-none;

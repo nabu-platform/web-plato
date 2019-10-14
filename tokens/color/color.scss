@@ -1,0 +1,50 @@
+// ---------------------------------------------- brand colors
+
+$color-primary-lightest: #F8FDE8 !default;
+$color-primary-lighter: #DEF2A6 !default;
+$color-primary-light: #C3E467 !default;
+$color-primary-base: #9CC923 !default;
+$color-primary-dark: #627E15 !default;
+$color-primary-darkest: #4B600B !default;
+
+$color-secondary-lightest: #F0FCFF !default;
+$color-secondary-lighter: #C7F4FF !default;
+$color-secondary-light: #4DDBFF !default;
+$color-secondary-base: #00B5E2 !default;
+$color-secondary-dark: #007E9E !default;
+$color-secondary-darkest: #005E75 !default;
+
+// ---------------------------------------------- neutral colors
+
+$color-neutral-lightest: #FAFAFA !default;
+$color-neutral-lighter: #F6F6F6 !default;
+$color-neutral-light: #D2D2CA !default;
+$color-neutral-base: #919D9E !default;
+$color-neutral-dark: #6C787A !default;
+$color-neutral-darkest: #3B4344 !default;
+
+$color-neutral-black: #000000 !default;
+$color-neutral-white: #FFFFFF !default;
+
+// ---------------------------------------------- UI colors
+
+$color-danger-lightest: #FFE7E7 !default;
+$color-danger-light: #FFCFCF !default;
+$color-danger-base: #FF0F0F !default;
+$color-danger-dark: #990909 !default;
+
+$color-success-lightest: #E6F4E6 !default;
+$color-success-light: #B3DFB3 !default;
+$color-success-base: #009400 !default;
+$color-success-dark: #005900 !default;
+
+$color-warning-lightest: #F9F2B9 !default;
+$color-warning-light: #EFDF50 !default;
+$color-warning-base: #8F8630 !default;
+$color-warning-dark: #554E1B !default;
+
+// ---------------------------------------------- opacity levels
+
+$color-opacity-high: 0.9 !default;
+$color-opacity-medium: 0.75 !default;
+$color-opacity-low: 0.5 !default;

@@ -1,0 +1,120 @@
+// --------------------------------------------------------- VARIABLES
+
+$button-color: $neutral-color !default;
+$button-background: $neutral-contrast !default;
+$button-border: none !default;
+$button-font-size: $font-size-base !default;
+$button-font-family: $font-family !default;
+$button-font-weight: $font-weight !default;
+$button-height: $spacing-scale-xxl !default;
+$button-height-small: $spacing-scale-xl !default;
+$button-height-large: $spacing-scale-xxxl !default;
+
+$button-border-radius: $border-radius-none !default;
+$button-border-style: $border-style !default;
+$button-border-width: $border-width !default;
+
+$button-margin: 0 1rem 1rem 0 !default;
+$button-padding: 0 2rem !default;
+$button-text-transform: none !default;
+$button-transition: all 0.3s ease !default;
+$button-min-width: auto !default;
+
+$button-border-radius-round: calc(#{$button-height} / 2) !default;
+$button-icon-padding: 0 1rem !default;
+
+
+
+// --------------------------------------------------------- mixins
+
+@mixin button-colorize($property, $color) {
+	#{$property}: $color;
+// TODO
+	&:hover {
+		#{$property}: lighten($color, 10);
+	}
+	&:active, &.active {
+		#{$property}: lighten($color, 20);
+	} 
+	&:disabled, &.disabled {
+		#{$property}: lighten($color, 40);
+	}
+}
+
+@mixin button-background($color) {
+	@include button-colorize("background-color", $color);
+}
+@mixin button-border($color) {
+	@include button-colorize("border-color", $color);
+}
+@mixin button-color($color) {
+	@include button-colorize("color", $color);
+}
+@mixin button-outline($color) {
+	background-color: transparent;
+	border-width: $button-border-width;
+	border-style: $button-border-style;
+	@include button-border($color);
+	@include button-color($color);
+}
+@mixin button-ghost($color) {
+	background-color: transparent;
+	border: none;
+	@include button-color($color);
+}
+
+@mixin button-small {
+	height: $button-height-small;
+	line-height: $button-height-small;
+}
+
+@mixin button-large {
+	height: $button-height-large;
+	line-height: $button-height-large;
+}
+
+@mixin button-base {
+	border: $button-border;
+	border-radius: $button-border-radius;
+	color: $button-color;
+	cursor: pointer;
+	display: inline-block;
+	font-family: $font-family;
+	font-size: $button-font-size;
+	font-weight: $button-font-weight;
+	height: $button-height;
+	line-height: $button-height;
+	margin: $button-margin;
+	padding: $button-padding;
+	text-align: center;
+	text-transform: $button-text-transform;
+	transition: $button-transition;
+	outline: none;
+	min-width: $button-min-width;
+	&.large {
+		@include button-large;
+	}
+	&.round {
+		border-radius: $button-border-radius-round;
+	}
+	&.square {
+		border-radius: 0;
+	}
+	&.full {
+		width: 100%;
+	}
+// TODO
+	.fa {
+		line-height: $button-height;
+		margin-right: 0;
+		position: relative;
+		left: -0.8rem;
+		top: 0.2rem;
+	}
+	&.is-icon {
+		padding: $button-icon-padding;
+		.fa {
+			margin: 0;
+		}
+	}
+}
