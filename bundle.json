@@ -36,6 +36,12 @@
                 "type": "bundle",
                 "url": "button/bundle.json"
             }
+        },
+        "utilities": {
+            "include-media.json": {
+                "type": "bundle",
+                "url": "include-media/bundle.json"
+            }
         }
 	}
 }
