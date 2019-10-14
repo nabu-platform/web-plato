@@ -1,0 +1,11 @@
+{
+	"name": "include-media",
+	"resources": {
+		"devices.scss": {
+			"url": "https://raw.githubusercontent.com/nablex/themes/master/dashboard/devices.sass"
+		},
+		"include-media.scss": {
+			"url": "https://raw.githubusercontent.com/nabu-platform/include-media/master/dist/_include-media.scss"
+		}
+	}
+}
