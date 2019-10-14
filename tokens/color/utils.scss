@@ -5,7 +5,7 @@ $plato-color-tint-scale: (
         light: $color-primary-light,
         base: $color-primary-base,
         dark: $color-primary-dark,
-        darker: $color-primary-darker
+        darkest: $color-primary-darkest
     ),
     secondary: (
         lightest: $color-secondary-lightest,
@@ -13,7 +13,7 @@ $plato-color-tint-scale: (
         light: $color-secondary-light,
         base: $color-secondary-base,
         dark: $color-secondary-dark,
-        darker: $color-secondary-darker
+        darkest: $color-secondary-darkest
     ),
     neutral: (
         lightest: $color-neutral-lightest,
@@ -21,7 +21,7 @@ $plato-color-tint-scale: (
         light: $color-neutral-light,
         base: $color-neutral-base,
         dark: $color-neutral-dark,
-        darker: $color-neutral-darker
+        darkest: $color-neutral-darkest
     ),
     danger: (
         lightest: $color-danger-lightest,
@@ -29,7 +29,7 @@ $plato-color-tint-scale: (
         light: $color-danger-light,
         base: $color-danger-base,
         dark: $color-danger-dark,
-        darker: $color-danger-dark
+        darkest: $color-danger-dark
     ),
     success: (
         lightest: $color-success-lightest,
@@ -37,7 +37,7 @@ $plato-color-tint-scale: (
         light: $color-success-light,
         base: $color-success-base,
         dark: $color-success-dark,
-        darker: $color-success-dark
+        darkest: $color-success-dark
     ),
     warning: (
         lightest: $color-warning-lightest,
@@ -45,7 +45,7 @@ $plato-color-tint-scale: (
         light: $color-warning-light,
         base: $color-warning-base,
         dark: $color-warning-dark,
-        darker: $color-warning-dark
+        darkest: $color-warning-dark
     )
 ) !default;
 

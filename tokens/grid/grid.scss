@@ -7,8 +7,8 @@
 // when dividing, use rounding, both ceil and floor. If ceil is a whole divider of the grid (modulo = 0), use ceil. Else use floor.
 
 // TODO : replace values with $breakpoints mapping
-$grid-columns-breakpoint-small-medium: "medium" !default;
-$grid-columns-breakpoint-medium-large: "large" !default;
+$grid-columns-breakpoint-small-medium: ">=medium" !default;
+$grid-columns-breakpoint-medium-large: ">=large" !default;
 
 $grid-columns-count-small: 2 !default;
 $grid-columns-count-medium: 6 !default;
@@ -17,8 +17,8 @@ $grid-columns-count-large: 12 !default;
 $grid-columns-gutter-width: $spacing-scale-l !default;
 
 .plato-grid_column .plato-grid_row {
-	margin-left: (-1 * $grid-columns-gutter-width / 2);
-	margin-right: (-1 * $grid-columns-gutter-width / 2);
+	margin-left: calc(-1 * $grid-columns-gutter-width / 2);
+	margin-right: calc(-1 * $grid-columns-gutter-width / 2);
 }
 
 // Mixins to eliminate code repitition
