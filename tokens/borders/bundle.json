@@ -1,0 +1,8 @@
+{
+	"name": "web-plato-token-borders",
+	"resources": {
+		"borders.scss": {
+			"url": "borders.scss"
+		}
+	}
+}

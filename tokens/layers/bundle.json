@@ -1,0 +1,8 @@
+{
+	"name": "web-plato-token-layers",
+	"resources": {
+		"layers.scss": {
+			"url": "layers.scss"
+		}
+	}
+}

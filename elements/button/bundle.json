@@ -1,0 +1,11 @@
+{
+	"name": "web-plato-elements-button",
+	"resources": {
+		"base.scss": {
+			"url": "base.scss"
+		},
+		"styles.scss": {
+			"url": "styles.scss"
+		}
+	}
+}

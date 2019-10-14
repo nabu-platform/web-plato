@@ -1,0 +1,8 @@
+{
+	"name": "web-plato-token-typography",
+	"resources": {
+		"type-scale.scss": {
+			"url": "type-scale.scss"
+		}
+	}
+}

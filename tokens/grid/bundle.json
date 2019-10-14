@@ -1,0 +1,8 @@
+{
+	"name": "web-plato-token-grid",
+	"resources": {
+		"grid.scss": {
+			"url": "grid.scss"
+		}
+	}
+}

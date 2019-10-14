@@ -1,0 +1,8 @@
+{
+	"name": "web-plato-token-base",
+	"resources": {
+		"variables.scss": {
+			"url": "variables.scss"
+		}
+	}
+}

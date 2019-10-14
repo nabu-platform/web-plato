@@ -1,0 +1,14 @@
+{
+	"name": "web-plato-token-color",
+	"resources": {
+		"color.scss": {
+			"url": "color.scss"
+		},
+		"map.scss": {
+			"url": "map.scss"
+		},
+		"utils.scss": {
+			"url": "utils.scss"
+		}
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"name": "web-plato-token-spacing",
+	"resources": {
+		"spacing.scss": {
+			"url": "spacing.scss"
+		}
+	}
+}
