@@ -10,37 +10,37 @@
         "tokens": {
             "color.json": {
                 "type": "bundle",
-                "url": "color/bundle.json"
+                "url": "tokens/color/bundle.json"
             },
             "base.json": {
                 "type": "bundle",
-                "url": "base/bundle.json"
+                "url": "tokens/base/bundle.json"
             },
             "borders.json": {
                 "type": "bundle",
-                "url": "borders/bundle.json"
+                "url": "tokens/borders/bundle.json"
             },
             "spacing.json": {
                 "type": "bundle",
-                "url": "spacing/bundle.json"
+                "url": "tokens/spacing/bundle.json"
             },
             "grid.json": {
                 "type": "bundle",
-                "url": "grid/bundle.json"
+                "url": "tokens/grid/bundle.json"
             },
             "layers.json": {
                 "type": "bundle",
-                "url": "layers/bundle.json"
+                "url": "tokens/layers/bundle.json"
             },
             "typography.json": {
                 "type": "bundle",
-                "url": "typography/bundle.json"
+                "url": "tokens/typography/bundle.json"
             }
         },
         "elements": {
             "button.json": {
                 "type": "bundle",
-                "url": "button/bundle.json"
+                "url": "elements/button/bundle.json"
             }
         }
 	}
