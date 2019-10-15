@@ -1,7 +1,7 @@
 // ---------------------------------------------- layer levels
 
 %layer-level-focus {
-    box-shadow: 0 0 12 rgba(0, 126, 158, 1);
+    box-shadow: 0 0 12px rgba(0, 126, 158, 1);
 }
 
 %layer-level-flat {
@@ -9,21 +9,21 @@
 }
 
 %layer-level-low {
-    box-shadow: 0 2 4 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
     &:focus, &.focused {
         @extend %layer-level-focus;
     }
 }
 
 %layer-level-middle {
-    box-shadow: 0 4 8 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
     &:focus, &.focused {
         @extend %layer-level-focus;
     }
 }
 
 %layer-level-low {
-    box-shadow: 0 8 16 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
     &:focus, &.focused {
         @extend %layer-level-focus;
     }
