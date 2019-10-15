@@ -22,7 +22,7 @@ $font-weight-copy: $font-weight !default;
 %font-tiny {
 	font-size: $font-size-tiny; }
 
-p {
+p, %p {
     color: $font-color-copy;
 	font-size: $font-size-base;
     font-weight: $font-weight-copy;
