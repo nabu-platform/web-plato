@@ -13,3 +13,29 @@ $spacing-scale-xl: calc(#{$spacing-scale-base} * 3) !default;
 $spacing-scale-xxl: calc(#{$spacing-scale-base} * 4) !default;
 $spacing-scale-xxxl: calc(#{$spacing-scale-base} * 6) !default;
 $spacing-scale-xxxxl: calc(#{$spacing-scale-base} * 8) !default;
+
+$spacing-scale: (
+	"base": $spacing-scale-base,
+	"xxxs": $spacing-scale-xxxs,
+	"xxs": $spacing-scale-xxs,
+	"xs": $spacing-scale-xs,
+	"s": $spacing-scale-s,
+	"sm": $spacing-scale-sm,
+	"m": $spacing-scale-m,
+	"ml": $spacing-scale-ml,
+	"l": $spacing-scale-l,
+	"xl": $spacing-scale-xl,
+	"xxl": $spacing-scale-xxl,
+	"xxxl": $spacing-scale-xxxl,
+	"xxxxl": $spacing-scale-xxxxl
+);
+
+@function spacing($scale: "m") {
+	@if map-has-key($spacing-scale, $scale) {
+		@return map-get($spacing-scale, $scale);
+	}
+	@else {
+	    @warn "Unknown spacing scale '#{$scale}'.";
+	    @return null;
+	}
+}
