@@ -1,0 +1,20 @@
+$theme-mapping-default-breakpoints: (
+    "phone": 320px,
+    "tablet": 768px,
+    "desktop": 1024px
+);
+
+@if variable-exists($name: breakpoints) {
+    @if map-has-key($map: breakpoints, $key: phone) == false {
+        $breakpoints: map-merge($breakpoints, (phone: map-get($theme-mapping-default-breakpoints, phone)));
+    }
+    @if map-has-key($map: breakpoints, $key: tablet) == false {
+        $breakpoints: map-merge($breakpoints, (tablet: map-get($theme-mapping-default-breakpoints, tablet)));
+    }
+    @if map-has-key($map: breakpoints, $key: desktop) == false {
+        $breakpoints: map-merge($breakpoints, (desktop: map-get($theme-mapping-default-breakpoints, desktop)));
+    }
+}
+@else {
+    $breakpoints: $theme-mapping-default-breakpoints !default;
+}

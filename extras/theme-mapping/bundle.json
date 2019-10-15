@@ -6,6 +6,9 @@
 		},
 		"variables.scss": {
 			"url": "variables.scss"
+		},
+		"breakpoints.scss": {
+			"url": "breakpoints.scss"
 		}
 	}
 }
