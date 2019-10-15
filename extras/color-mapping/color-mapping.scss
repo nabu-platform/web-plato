@@ -1,0 +1,84 @@
+// basic colors
+$light-color: color-tint("neutral", "lightest") !default;
+$light-contrast: color-tint("neutral", "darkest") !default;
+
+$dark-color: color-tint("neutral", "darkest") !default;
+$dark-contrast: color-tint("neutral", "lightest") !default;
+
+$disabled-color: color-tint("neutral", "base") !default;
+$disabled-contrast: $light-contrast !default;
+
+$info-color: $primary-color !default;
+$info-contrast: $primary-contrast !default;
+
+// ---------------------------------------------- color groups
+
+// alpha colors: the main elements in a screen (menu, header,.. could be accent, hero is obviously hero, and standard is for regular components in the screen
+
+$alpha-color: color-tint("neutral", "white") !default;
+$alpha-contrast: color-tint("neutral", "darkest") !default;
+$alpha-text: $alpha-contrast !default;
+$alpha-link: $primary-color !default;
+$alpha-border: color-tint("neutral", "base") !default;
+
+$alpha-hero-color: color-tint("secondary", "base") !default;
+$alpha-hero-contrast: color-tint("neutral", "white") !default;
+$alpha-hero-text: $alpha-hero-contrast !default;
+$alpha-hero-link: $primary-color !default;
+$alpha-hero-border: color-tint("neutral", "darkest") !default;
+
+$alpha-accent-color: color-tint("neutral", "darkest") !default;
+$alpha-accent-contrast: color-tint("neutral", "light") !default;
+$alpha-accent-text: color-tint("neutral", "light") !default;
+$alpha-accent-link: color-tint("neutral", "lightest") !default;
+$alpha-accent-border: color-tint("neutral", "light") !default;
+
+// beta colors: elements embedded in an alpha context
+
+$beta-color: color-tint("neutral", "white") !default;
+$beta-contrast: color-tint("neutral", "darkest") !default;
+$beta-text: color-tint("neutral", "darkest") !default;
+$beta-link: color-tint("secondary", "dark") !default;
+$beta-border: color-tint("neutral", "light") !default;
+
+$beta-hero-color: color-tint("secondary", "base") !default;
+$beta-hero-contrast: color-tint("neutral", "white") !default;
+$beta-hero-text: color-tint("neutral", "white") !default;
+$beta-hero-link: color-tint("secondary", "dark") !default;
+$beta-hero-border: color-tint("neutral", "darkest") !default;
+
+$beta-accent-color: color-tint("neutral", "light") !default;
+$beta-accent-contrast: color-tint("neutral", "darkest") !default;
+$beta-accent-text: $secondary-contrast !default;
+$beta-accent-link: $primary-color !default;
+$beta-accent-border: color-tint("neutral", "light") !default;
+
+// ------------------------------------------ derivatives
+
+// alpha colors
+
+$alpha-text-light: lighten($alpha-text, 20%) !default;
+$alpha-text-hover: darken($alpha-text, 20%) !default;
+$alpha-link-hover: darken($alpha-link, 20%) !default;
+
+$alpha-accent-text-light: lighten($alpha-accent-text, 20%) !default;
+$alpha-accent-text-hover: darken($alpha-accent-text, 20%) !default;
+$alpha-accent-link-hover: darken($alpha-accent-link, 20%) !default;
+
+$alpha-hero-text-light: lighten($alpha-hero-text, 20%) !default;
+$alpha-hero-text-hover: darken($alpha-hero-text, 20%) !default;
+$alpha-hero-link-hover: darken($alpha-hero-link, 20%) !default;
+
+// beta colors
+
+$beta-text-light: lighten($beta-text, 20%) !default;
+$beta-text-hover: darken($beta-text, 20%) !default;
+$beta-link-hover: darken($beta-link, 20%) !default;
+
+$beta-accent-text-light: lighten($beta-accent-text, 20%) !default;
+$beta-accent-text-hover: darken($beta-accent-text, 20%) !default;
+$beta-accent-link-hover: darken($beta-accent-link, 20%) !default;
+
+$beta-hero-text-light: lighten($beta-hero-text, 20%) !default;
+$beta-hero-text-hover: darken($beta-hero-text, 20%) !default;
+$beta-hero-link-hover: darken($beta-hero-link, 20%) !default;
