@@ -95,7 +95,7 @@ $grid-columns-gutter-width: $spacing-scale-l !default;
 		}
 	}
 	// Generate grid for large breakpoint and up
-	@include media($grid-columns-breakpoint-small-large) {
+	@include media($grid-columns-breakpoint-medium-large) {
 		$i: 1;
 		@while $i <= $grid-columns-count-large {
 			$percentage: unquote((100 / ($grid-columns-count-large / $i)) + "%");
