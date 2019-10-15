@@ -15,14 +15,14 @@ $info-contrast: $primary-contrast !default;
 
 // alpha colors: the main elements in a screen (menu, header,.. could be accent, hero is obviously hero, and standard is for regular components in the screen
 
-$alpha-color: color-tint("neutral", "white") !default;
+$alpha-color: $color-neutral-white !default;
 $alpha-contrast: color-tint("neutral", "darkest") !default;
 $alpha-text: $alpha-contrast !default;
 $alpha-link: $primary-color !default;
 $alpha-border: color-tint("neutral", "base") !default;
 
 $alpha-hero-color: color-tint("secondary", "base") !default;
-$alpha-hero-contrast: color-tint("neutral", "white") !default;
+$alpha-hero-contrast: $color-neutral-white !default;
 $alpha-hero-text: $alpha-hero-contrast !default;
 $alpha-hero-link: $primary-color !default;
 $alpha-hero-border: color-tint("neutral", "darkest") !default;
@@ -35,15 +35,15 @@ $alpha-accent-border: color-tint("neutral", "light") !default;
 
 // beta colors: elements embedded in an alpha context
 
-$beta-color: color-tint("neutral", "white") !default;
+$beta-color: $color-neutral-white !default;
 $beta-contrast: color-tint("neutral", "darkest") !default;
 $beta-text: color-tint("neutral", "darkest") !default;
 $beta-link: color-tint("secondary", "dark") !default;
 $beta-border: color-tint("neutral", "light") !default;
 
 $beta-hero-color: color-tint("secondary", "base") !default;
-$beta-hero-contrast: color-tint("neutral", "white") !default;
-$beta-hero-text: color-tint("neutral", "white") !default;
+$beta-hero-contrast: $color-neutral-white !default;
+$beta-hero-text: $color-neutral-white !default;
 $beta-hero-link: color-tint("secondary", "dark") !default;
 $beta-hero-border: color-tint("neutral", "darkest") !default;
 

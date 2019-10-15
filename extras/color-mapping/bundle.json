@@ -1,8 +1,0 @@
-{
-	"name": "web-plato-extras-color-mapping",
-	"resources": {
-		"color-mapping.scss": {
-			"url": "color-mapping.scss"
-		}
-	}
-}
