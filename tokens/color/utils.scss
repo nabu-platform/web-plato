@@ -51,7 +51,7 @@ $plato-color-tint-scale: (
 
 @function color-tint($color: "primary", $tint: "base") {
     @if map-has-key($plato-color-tint-scale, $color) {
-        $color-scale: $map-get($plato-color-tint-scale, $color);
+        $color-scale: map-get($plato-color-tint-scale, $color);
         @if map-has-key($map: $color-scale, $key: $tint) {
             @return map-get($map: $color-scale, $key: $tint);
         }
