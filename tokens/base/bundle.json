@@ -3,6 +3,9 @@
 	"resources": {
 		"variables.scss": {
 			"url": "variables.scss"
+		},
+		"reset.scss": {
+			"url": "reset.scss"
 		}
 	}
 }
