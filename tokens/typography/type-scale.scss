@@ -110,7 +110,8 @@ h1, .h1, %h1 {
 	margin-top: 0;
 }
 .sh1, %sh1 {
-    font-size: $font-size-subheading1;
+	font-size: $font-size-subheading1;
+	font-weight: $font-weight-subheading;
     letter-spacing: $font-spacing-subheading1;
 	line-height: $font-line-height-subheading;
 	margin-top: 0;
@@ -123,7 +124,8 @@ h2, .h2, %h2 {
 	margin-top: 0;
 }
 .sh2, %sh2 {
-    font-size: $font-size-subheading2;
+	font-size: $font-size-subheading2;
+	font-weight: $font-weight-subheading;
     letter-spacing: $font-spacing-subheading2;
 	line-height: $font-line-height-subheading;
 	margin-top: 0;
@@ -136,7 +138,8 @@ h3, .h3, %h3 {
 	margin-top: 0;
 }
 .sh3, %sh3 {
-    font-size: $font-size-subheading3;
+	font-size: $font-size-subheading3;
+	font-weight: $font-weight-subheading;
     letter-spacing: $font-spacing-subheading3;
 	line-height: $font-line-height-subheading;
 	margin-top: 0;
@@ -149,7 +152,8 @@ h4, .h4, %h4 {
 	margin-top: 0;
 }
 .sh4, %sh4 {
-    font-size: $font-size-subheading4;
+	font-size: $font-size-subheading4;
+	font-weight: $font-weight-subheading;
     letter-spacing: $font-spacing-subheading4;
 	line-height: $font-line-height-subheading;
 	margin-top: 0;
@@ -162,7 +166,8 @@ h5, .h5, %h5 {
 	margin-top: 0;
 }
 .sh5, %sh5 {
-    font-size: $font-size-subheading5;
+	font-size: $font-size-subheading5;
+	font-weight: $font-weight-subheading;
     letter-spacing: $font-spacing-subheading5;
 	line-height: $font-line-height-subheading;
 	margin-top: 0;
@@ -175,8 +180,23 @@ h6, .h6, %h6 {
 	margin-top: 0;
 }
 .sh6, %sh6 {
-    font-size: $font-size-subheading6;
+	font-size: $font-size-subheading6;
+	font-weight: $font-weight-subheading;
     letter-spacing: $font-spacing-subheading6;
+	line-height: $font-line-height-subheading;
+	margin-top: 0;
+}
+
+.h7, %h7 {
+    font-size: $font-size-heading7;
+    letter-spacing: $font-spacing-heading7;
+	line-height: $font-line-height-heading;
+	margin-top: 0;
+}
+.sh7, %sh7 {
+	font-size: $font-size-subheading7;
+	font-weight: $font-weight-subheading;
+    letter-spacing: $font-spacing-subheading7;
 	line-height: $font-line-height-subheading;
 	margin-top: 0;
 }
