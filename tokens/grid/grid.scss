@@ -5,6 +5,12 @@
 // extra-small, small, medium, large: set up hashmap with dividers
 // xs: 4, s: 3, m: 2, l: 1
 // when dividing, use rounding, both ceil and floor. If ceil is a whole divider of the grid (modulo = 0), use ceil. Else use floor.
+$grid-columns-size-scale: (
+	"extra-small": 4,
+	"small": 3,
+	"medium": 2,
+	"large": 1
+) !default;
 
 // TODO : replace values with $breakpoints mapping
 $grid-columns-breakpoint-small-medium: ">=medium" !default;
@@ -14,7 +20,7 @@ $grid-columns-count-small: 2 !default;
 $grid-columns-count-medium: 6 !default;
 $grid-columns-count-large: 12 !default;
 
-$grid-columns-gutter-width: $spacing-scale-l !default;
+$grid-columns-gutter-width: spacing("l") !default;
 
 .plato-grid_column .plato-grid_row {
 	margin-left: calc(-1 * $grid-columns-gutter-width / 2);
@@ -29,18 +35,33 @@ $grid-columns-gutter-width: $spacing-scale-l !default;
 }
 
 @mixin grid-classes($size, $i, $percentage) {
-	&.plato-grid_column_offset-#{$size}#{$i} {
+	& .plato-grid_column_offset-#{$size}#{$i}, & %plato-grid_column_offset-#{$size}#{$i} {
 		margin-left: $percentage;
 	}
-	&.plato-grid_column_pull-#{$size}#{$i} {
+	& .plato-grid_column_pull-#{$size}#{$i}, & %plato-grid_column_pull-#{$size}#{$i} {
 		right: $percentage;
 	}
-	&.plato-grid_column_push-#{$size}#{$i} {
+	& .plato-grid_column_push-#{$size}#{$i}, & %plato-grid_column_push-#{$size}#{$i} {
 		left: $percentage;
 	}
 }
 
-.plato-grid_row {
+@mixin grid-sizes($column-count, $size) {
+	@each $scale, $divider in $grid-columns-size-scale {
+		$num-columns: 1;
+		@if ( $column-count % ceil($column-count / $divider) == 0 ) {
+			$num-columns: ceil($column-count / $divider);
+		}
+		@else {
+			$num-columns: floor($column-count / $divider);
+		}
+		.plato-grid_column-#{$scale} {
+			@extend %plato-grid_column-#{$size}#{$num-columns};
+		}
+	}
+}
+
+@mixin plato-grid_row {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: $grid-columns-gutter-width;
@@ -50,16 +71,25 @@ $grid-columns-gutter-width: $spacing-scale-l !default;
 		display: table;
 		clear: both;
 	}
-	[class^="plato-grid_column-"] {
-		float: left;
+	[class*="plato-grid_column-"] {
 		box-sizing: border-box;
-		padding: 0 $grid-columns-gutter-width / 2;
+		display: inline-block;
+		float: left;
 		min-height: 1px;
+		padding: 0 calc(#{$grid-columns-gutter-width} / 2);
 		&[class*="push-"],
 		&[class*="pull-"] {
 			position: relative;
 		}
 	}
+	.plato-grid_column_offset-center, %plato-grid_column_offset-center {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.plato-grid_row, %plato-grid_row {
+	@include plato-grid_row();
 	// Generate grid for small breakpoint and up
 	$i: 1;
 	@while $i <= $grid-columns-count-small {
@@ -71,11 +101,12 @@ $grid-columns-gutter-width: $spacing-scale-l !default;
 		$i: $i+1;
 	}
 	$i: 1;
-	@while $i <=$grid-columns-count-small {
+	@while $i <= $grid-columns-count-small {
 		$percentage: unquote((100 / ($grid-columns-count-small / $i)) + "%");
 		@include grid-classes("small", $i, $percentage);
 		$i: $i + 1;
 	}
+	@include grid-sizes($grid-columns-count-small, "small");
 	// Generate grid for medium breakpoint and up
 	@include media($grid-columns-breakpoint-small-medium) {
 		$i: 1;
@@ -88,11 +119,12 @@ $grid-columns-gutter-width: $spacing-scale-l !default;
 			$i: $i+1;
 		}
 		$i: 1;
-		@while $i <=$grid-columns-count-medium {
+		@while $i <= $grid-columns-count-medium {
 			$percentage: unquote((100 / ($grid-columns-count-medium / $i)) + "%");
 			@include grid-classes("medium", $i, $percentage);
 			$i: $i + 1;
 		}
+		@include grid-sizes($grid-columns-count-medium, "medium");
 	}
 	// Generate grid for large breakpoint and up
 	@include media($grid-columns-breakpoint-medium-large) {
@@ -106,10 +138,11 @@ $grid-columns-gutter-width: $spacing-scale-l !default;
 			$i: $i+1;
 		}
 		$i: 1;
-		@while $i <=$grid-columns-count-large {
+		@while $i <= $grid-columns-count-large {
 			$percentage: unquote((100 / ($grid-columns-count-large / $i)) + "%");
 			@include grid-classes("large", $i, $percentage);
 			$i: $i + 1;
 		}
+		@include grid-sizes($grid-columns-count-large, "large");
 	}
 }
