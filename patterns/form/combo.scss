@@ -1,0 +1,43 @@
+// combo 
+$plato-form_combo_width: 100%;
+
+// dropdown 
+$plato-form_combo_dropdown_background: color-tint("secondary", "lightest");
+/// dropdown - value 
+$plato-form_combo_dropdown_value_padding: spacing("sm") spacing("s");
+$plato-form_combo_dropdown_value_background_selected: color-tint("secondary", "light");
+$plato-form_combo_dropdown_value_background_hover: color-tint("secondary", "lighter");
+$plato-form_combo_dropdown_value_color_selected: $font-color-copy;
+$plato-form_combo_dropdown_value_color_hover: $font-color-copy;
+
+
+.plato-form, %plato-form {
+	.plato-form_combo, %plato-form_combo {
+		width: $plato-form_combo_width;
+		.plato-form_combo_input, %plato-form_combo_input {
+			.input_container, %plato-form_combo_input_container {
+				.input_field, %plato-form_combo_input_container_field {
+					color: inherit;
+				}
+				.input_icon, %plato-form_combo_input_container_icon {
+					color: inherit;
+					
+				}
+				.combo_dropdown, %plato-form_combo_dropdown {
+					background-color: $plato-form_combo_dropdown_background;
+					.dropdown_value, %plato-form_combo_dropdown_value {
+						padding: $plato-form_combo_dropdown_value_padding;
+						&:hover {
+							background-color: $plato-form_combo_dropdown_value_background_hover;
+							color: $plato-form_combo_dropdown_value_color_hover;
+						}
+						&.selected, &%plato-form_combo_dropdown_value_selected {
+							background-color: $plato-form_combo_dropdown_value_background_selected;
+							color: $plato-form_combo_dropdown_value_color_selected;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,23 @@
+
+// group 
+$plato-form_group_background-color: color-tint("neutral", "lightest") !default;
+$plato-form_group_border-color: color-tint("secondary", "lighter") !default;
+$plato-form_group_border-style: $border-style !default;
+$plato-form_group_border-width: 0 0 0 spacing("s") !default;
+$plato-form_group_padding: spacing("ml") !default;
+/// group - description 
+$plato-form_group_description_color: color-tint("secondary", "light");
+$plato-form_group_description_font-size: $font-size-base;
+
+
+.plato-form_group {
+	background-color: $plato-form_group_background-color;
+	border-color: $plato-form_group_border-color;
+	border-style: $plato-form_group_border-style;
+	border-width: $plato-form_group_border-width;
+	padding: $plato-form_group_padding;
+	.group_description {
+		color: $plato-form_group_description_color;
+		font-size: $plato-form_group_description_font-size;
+	}
+}
