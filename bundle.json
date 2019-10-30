@@ -42,6 +42,12 @@
                 "type": "bundle",
                 "url": "elements/button/bundle.json"
             }
+        },
+        "patterns": {
+            "form.json": {
+                "type": "bundle",
+                "url": "patterns/form/bundle.json"
+            }
         }
 	}
 }
