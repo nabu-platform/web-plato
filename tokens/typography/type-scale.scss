@@ -22,7 +22,7 @@ $font-weight-copy: $font-weight !default;
 %font-tiny {
 	font-size: $font-size-tiny; }
 
-p, %paragraph {
+p, %paragraph, .plato-paragraph {
     color: $font-color-copy;
 	font-size: $font-size-base;
     font-weight: $font-weight-copy;
@@ -104,12 +104,15 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 
 h1, .h1, %h1 {
+    font-family: $font-family-heading;
     font-size: $font-size-heading1;
+    font-weight: $font-weight-heading;
     letter-spacing: $font-spacing-heading1;
 	line-height: $font-line-height-heading;
 	margin-top: 0;
 }
 .sh1, %sh1 {
+	font-family: $font-family-subheading;
 	font-size: $font-size-subheading1;
 	font-weight: $font-weight-subheading;
     letter-spacing: $font-spacing-subheading1;
@@ -118,12 +121,15 @@ h1, .h1, %h1 {
 }
 
 h2, .h2, %h2 {
+    font-family: $font-family-heading;
     font-size: $font-size-heading2;
+    font-weight: $font-weight-heading;
     letter-spacing: $font-spacing-heading2;
 	line-height: $font-line-height-heading;
 	margin-top: 0;
 }
 .sh2, %sh2 {
+	font-family: $font-family-subheading;
 	font-size: $font-size-subheading2;
 	font-weight: $font-weight-subheading;
     letter-spacing: $font-spacing-subheading2;
@@ -132,12 +138,15 @@ h2, .h2, %h2 {
 }
 
 h3, .h3, %h3 {
+    font-family: $font-family-heading;
     font-size: $font-size-heading3;
+    font-weight: $font-weight-heading;
     letter-spacing: $font-spacing-heading3;
 	line-height: $font-line-height-heading;
 	margin-top: 0;
 }
 .sh3, %sh3 {
+	font-family: $font-family-subheading;
 	font-size: $font-size-subheading3;
 	font-weight: $font-weight-subheading;
     letter-spacing: $font-spacing-subheading3;
@@ -146,12 +155,15 @@ h3, .h3, %h3 {
 }
 
 h4, .h4, %h4 {
+    font-family: $font-family-heading;
     font-size: $font-size-heading4;
+    font-weight: $font-weight-heading;
     letter-spacing: $font-spacing-heading4;
 	line-height: $font-line-height-heading;
 	margin-top: 0;
 }
 .sh4, %sh4 {
+	font-family: $font-family-subheading;
 	font-size: $font-size-subheading4;
 	font-weight: $font-weight-subheading;
     letter-spacing: $font-spacing-subheading4;
@@ -160,12 +172,15 @@ h4, .h4, %h4 {
 }
 
 h5, .h5, %h5 {
+    font-family: $font-family-heading;
     font-size: $font-size-heading5;
+    font-weight: $font-weight-heading;
     letter-spacing: $font-spacing-heading5;
 	line-height: $font-line-height-heading;
 	margin-top: 0;
 }
 .sh5, %sh5 {
+	font-family: $font-family-subheading;
 	font-size: $font-size-subheading5;
 	font-weight: $font-weight-subheading;
     letter-spacing: $font-spacing-subheading5;
@@ -174,12 +189,15 @@ h5, .h5, %h5 {
 }
 
 h6, .h6, %h6 {
+    font-family: $font-family-heading;
     font-size: $font-size-heading6;
+    font-weight: $font-weight-heading;
     letter-spacing: $font-spacing-heading6;
 	line-height: $font-line-height-heading;
 	margin-top: 0;
 }
 .sh6, %sh6 {
+	font-family: $font-family-subheading;
 	font-size: $font-size-subheading6;
 	font-weight: $font-weight-subheading;
     letter-spacing: $font-spacing-subheading6;
@@ -188,12 +206,15 @@ h6, .h6, %h6 {
 }
 
 .h7, %h7 {
+    font-family: $font-family-heading;
     font-size: $font-size-heading7;
+    font-weight: $font-weight-heading;
     letter-spacing: $font-spacing-heading7;
 	line-height: $font-line-height-heading;
 	margin-top: 0;
 }
 .sh7, %sh7 {
+	font-family: $font-family-subheading;
 	font-size: $font-size-subheading7;
 	font-weight: $font-weight-subheading;
     letter-spacing: $font-spacing-subheading7;
