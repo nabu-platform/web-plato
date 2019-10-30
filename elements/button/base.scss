@@ -6,7 +6,7 @@ $button-border: none !default;
 $button-font-size: $font-size-base !default;
 $button-font-family: $font-family !default;
 $button-font-weight: $font-weight !default;
-$button-height: $spacing-scale-xxl !default;
+$button-height: 3.375rem !default;
 $button-height-small: $spacing-scale-xl !default;
 $button-height-large: $spacing-scale-xxxl !default;
 
@@ -61,6 +61,9 @@ $button-icon-padding: 0 1rem !default;
 	background-color: transparent;
 	border: none;
 	@include button-color($color);
+	&:hover {
+		background-color: transparent;
+	}
 }
 
 @mixin button-small {
