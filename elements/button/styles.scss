@@ -11,30 +11,72 @@ $button-color-success-contrast: $success-contrast !default;
 $button-color-warning: $warning-color !default;
 $button-color-warning-contrast: $warning-contrast !default;
 
+// backgrounds 
+$button-color-background-outline: rgba(0, 0, 0, 0) !default;
+$button-color-background-outline-primary: $button-color-background-outline !default;
+$button-color-background-outline-secondary: $button-color-background-outline !default;
+$button-color-background-outline-danger: $button-color-background-outline !default;
+$button-color-background-outline-success: $button-color-background-outline !default;
+$button-color-background-outline-warning: $button-color-background-outline !default;
+
+$button-color-background-ghost: rgba(0, 0, 0, 0) !default;
+$button-color-background-ghost-primary: $button-color-background-ghost !default;
+$button-color-background-ghost-secondary: $button-color-background-ghost !default;
+$button-color-background-ghost-danger: $button-color-background-ghost !default;
+$button-color-background-ghost-success: $button-color-background-ghost !default;
+$button-color-background-ghost-warning: $button-color-background-ghost !default;
+
+
+
 // TODO : a-button colors
 
 $button-color-map: (
 	primary: (
 		color: $button-color-primary,
-		contrast: $button-color-primary-contrast
+		contrast: $button-color-primary-contrast,
+		background: (
+			regular: $button-color-primary,
+			outline: $button-color-background-outline-primary,
+			ghost: $button-color-background-ghost-primary
+		)
 	),
 	secondary: (
 		color: $button-color-secondary,
-		contrast: $button-color-secondary-contrast
+		contrast: $button-color-secondary-contrast,
+		background: (
+			regular: $button-color-secondary,
+			outline: $button-color-background-outline-secondary,
+			ghost: $button-color-background-ghost-secondary
+		)
 	),
 	danger: (
 		color: $button-color-danger,
-		contrast: $button-color-danger-contrast
+		contrast: $button-color-danger-contrast,
+		background: (
+			regular: $button-color-danger,
+			outline: $button-color-background-outline-danger,
+			ghost: $button-color-background-ghost-danger
+		)
 	),
 	success: (
 		color: $button-color-success,
-		contrast: $button-color-success-contrast
+		contrast: $button-color-success-contrast,
+		background: (
+			regular: $button-color-success,
+			outline: $button-color-background-outline-success,
+			ghost: $button-color-background-ghost-success
+		)
 	),
 	warning: (
 		color: $button-color-warning,
-		contrast: $button-color-warning-contrast
+		contrast: $button-color-warning-contrast,
+		background: (
+			regular: $button-color-warning,
+			outline: $button-color-background-outline-warning,
+			ghost: $button-color-background-ghost-warning
+		)
 	)
-);
+) !default;
 
 @function button-color-map-get-color($color, $variant) {
 	@if map-has-key($map: $button-color-map, $key: $color) {
@@ -44,22 +86,37 @@ $button-color-map: (
 			@return $color-variant;
 		}
 		@else {
-			@warn "Requested variant '#{$variant}' is not available for color '#{$color}'.";
+			@error "Requested variant '#{$variant}' is not available for color '#{$color}'.";
 			@return null;
 		}
 	}
 	@else {
-		@warn "Requested color '#{$color}' is not available.";
+		@error "Requested color '#{$color}' is not available.";
 		@return null;
 	}
 }
 
-@mixin button-generator($color: "primary", $style: "regular", $size: "normal", $options: ("round": false, "square": false, "full": false)) {
+@function button-color-map-get-color-for-style($color, $variant, $style) {
+	$variant-styles: button-color-map-get-color($color, $variant);
+	@if map-has-key($map: $variant-styles, $key: $style) {
+		$style-color: map-get($map: $variant-styles, $key: $style);
+		@return $style-color;
+	}
+	@else {
+		@error "Requested style '#{$style}' is not available.";
+		@return null;
+	}
+}
+
+@mixin button-generator($color: "primary", $style: "regular", $size: "normal", $options: ("round": false, "square": false, "full": false, "has-icon": false)) {
 	$color-color: button-color-map-get-color($color, "color");
 	$color-contrast: button-color-map-get-color($color, "contrast");
+	$color-background: button-color-map-get-color-for-style($color, "background", $style);
 	color: $color-contrast;
-	@include button-background($color-color);
+	@include button-background($color-background);
 	@include button-base;
+	
+	// style
 	@if $style == "outline" {
 		@include button-outline($color-color);
 	}
@@ -70,7 +127,27 @@ $button-color-map: (
 		// do nothing
 	}
 	@else if $style != null {
-		@warn "The requested style '#{$style}' is not available.";
+		@error "The requested style '#{$style}' is not available.";
+	}
+	
+	// size 
+	@if $size == "small" {
+		@include button-small;
+	}
+	@else if $size == "large" {
+		@include button-large;
+	}
+	@else if $size == "normal" {
+		// do nothing
+	}
+	@else if $size != null {
+		@error "The requested size '#{$size}' is not available.";
+	}
+	
+	// options 
+	/// options - has-icon 
+	@if map-get($options, "has-icon") == true {
+		@include button-options-has-icon;
 	}
 }
 
