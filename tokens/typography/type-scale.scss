@@ -109,6 +109,7 @@ h1, .h1, %h1 {
     font-weight: $font-weight-heading;
     letter-spacing: $font-spacing-heading1;
 	line-height: $font-line-height-heading;
+	margin: $font-margin-heading;
 	margin-top: 0;
 }
 .sh1, %sh1 {
@@ -117,6 +118,7 @@ h1, .h1, %h1 {
 	font-weight: $font-weight-subheading;
     letter-spacing: $font-spacing-subheading1;
 	line-height: $font-line-height-subheading;
+	margin: $font-margin-subheading;
 	margin-top: 0;
 }
 
@@ -126,6 +128,7 @@ h2, .h2, %h2 {
     font-weight: $font-weight-heading;
     letter-spacing: $font-spacing-heading2;
 	line-height: $font-line-height-heading;
+	margin: $font-margin-heading;
 	margin-top: 0;
 }
 .sh2, %sh2 {
@@ -134,6 +137,7 @@ h2, .h2, %h2 {
 	font-weight: $font-weight-subheading;
     letter-spacing: $font-spacing-subheading2;
 	line-height: $font-line-height-subheading;
+	margin: $font-margin-subheading;
 	margin-top: 0;
 }
 
@@ -143,6 +147,7 @@ h3, .h3, %h3 {
     font-weight: $font-weight-heading;
     letter-spacing: $font-spacing-heading3;
 	line-height: $font-line-height-heading;
+	margin: $font-margin-heading;
 	margin-top: 0;
 }
 .sh3, %sh3 {
@@ -151,6 +156,7 @@ h3, .h3, %h3 {
 	font-weight: $font-weight-subheading;
     letter-spacing: $font-spacing-subheading3;
 	line-height: $font-line-height-subheading;
+	margin: $font-margin-subheading;
 	margin-top: 0;
 }
 
@@ -160,6 +166,7 @@ h4, .h4, %h4 {
     font-weight: $font-weight-heading;
     letter-spacing: $font-spacing-heading4;
 	line-height: $font-line-height-heading;
+	margin: $font-margin-heading;
 	margin-top: 0;
 }
 .sh4, %sh4 {
@@ -168,6 +175,7 @@ h4, .h4, %h4 {
 	font-weight: $font-weight-subheading;
     letter-spacing: $font-spacing-subheading4;
 	line-height: $font-line-height-subheading;
+	margin: $font-margin-subheading;
 	margin-top: 0;
 }
 
@@ -177,6 +185,7 @@ h5, .h5, %h5 {
     font-weight: $font-weight-heading;
     letter-spacing: $font-spacing-heading5;
 	line-height: $font-line-height-heading;
+	margin: $font-margin-heading;
 	margin-top: 0;
 }
 .sh5, %sh5 {
@@ -185,6 +194,7 @@ h5, .h5, %h5 {
 	font-weight: $font-weight-subheading;
     letter-spacing: $font-spacing-subheading5;
 	line-height: $font-line-height-subheading;
+	margin: $font-margin-subheading;
 	margin-top: 0;
 }
 
@@ -194,6 +204,7 @@ h6, .h6, %h6 {
     font-weight: $font-weight-heading;
     letter-spacing: $font-spacing-heading6;
 	line-height: $font-line-height-heading;
+	margin: $font-margin-heading;
 	margin-top: 0;
 }
 .sh6, %sh6 {
@@ -202,6 +213,7 @@ h6, .h6, %h6 {
 	font-weight: $font-weight-subheading;
     letter-spacing: $font-spacing-subheading6;
 	line-height: $font-line-height-subheading;
+	margin: $font-margin-subheading;
 	margin-top: 0;
 }
 
@@ -211,6 +223,7 @@ h6, .h6, %h6 {
     font-weight: $font-weight-heading;
     letter-spacing: $font-spacing-heading7;
 	line-height: $font-line-height-heading;
+	margin: $font-margin-heading;
 	margin-top: 0;
 }
 .sh7, %sh7 {
@@ -219,5 +232,6 @@ h6, .h6, %h6 {
 	font-weight: $font-weight-subheading;
     letter-spacing: $font-spacing-subheading7;
 	line-height: $font-line-height-subheading;
+	margin: $font-margin-subheading;
 	margin-top: 0;
 }
