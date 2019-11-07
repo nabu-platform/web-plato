@@ -74,6 +74,7 @@ $grid-columns-gutter-width: spacing("l") !default;
 	[class*="plato-grid_column-"] {
 		box-sizing: border-box;
 		display: inline-block;
+		flex: none !important;
 		float: left;
 		min-height: 1px;
 		padding: 0 calc(#{$grid-columns-gutter-width} / 2);
@@ -81,10 +82,19 @@ $grid-columns-gutter-width: spacing("l") !default;
 		&[class*="pull-"] {
 			position: relative;
 		}
+		&.clear-gutters {
+			padding: 0;
+		}
 	}
 	.plato-grid_column_offset-center, %plato-grid_column_offset-center {
 		margin-left: auto;
 		margin-right: auto;
+	}
+	&.align-left {
+		margin-left: 0;
+	}
+	&.align-right {
+		margin-right: 0;
 	}
 }
 
