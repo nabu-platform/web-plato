@@ -1,30 +1,54 @@
 // ---------------------------------------------- layer levels
 
-%layer-level-focus {
-    box-shadow: 0 0 12px rgba(0, 126, 158, 1);
+$layer-level-flat: none !default;
+$layer-level-low: 0 2px 4px rgba(0, 0, 0, 0.16) !default;
+$layer-level-middle: 0 4px 8px rgba(0, 0, 0, 0.16) !default;
+$layer-level-high: 0 8px 16px rgba(0, 0, 0, 0.16) !default;
+$layer-level-focus: 0 0 12px rgba(0, 126, 158, 1) !default;
+
+$layers-levels: (
+	"flat": $layer-level-flat,
+	"low": $layer-level-low,
+	"middle": $layer-level-middle,
+	"high": $layer-level-high,
+	"focus": $layer-level-focus
+);
+
+@function layers($level: "low") {
+	@if map-has-key($layers-levels, $level) {
+		@return map-get($layers-levels, $level);
+	}
+	@else {
+	    @warn "Unknown layers level '#{$level}'.";
+	    @return null;
+	}
 }
 
-%layer-level-flat {
-    box-shadow: none;
+@mixin layer-level($level: "low") {
+	box-shadow: layers($level);
+	@if ($level != "flat") {
+		&:focus, &.focused {
+			box-shadow: layers($level), layers("focus");
+		}
+	}
 }
 
-%layer-level-low {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
-    &:focus, &.focused {
-        @extend %layer-level-focus;
-    }
+.layer-level-focus, %layer-level-focus {
+    box-shadow: layers("focus");
 }
 
-%layer-level-middle {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
-    &:focus, &.focused {
-        @extend %layer-level-focus;
-    }
+.layer-level-flat, %layer-level-flat {
+    @include layer-level("flat");
 }
 
-%layer-level-high {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
-    &:focus, &.focused {
-        @extend %layer-level-focus;
-    }
+.layer-level-low, %layer-level-low {
+    @include layer-level("low");
+}
+
+.layer-level-middle, %layer-level-middle {
+    @include layer-level("middle");
+}
+
+.layer-level-high, %layer-level-high {
+    @include layer-level("high");
 }
