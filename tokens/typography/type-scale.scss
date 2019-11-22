@@ -96,142 +96,86 @@ $font-spacing-subheading5: $font-spacing-heading5 !default;
 $font-spacing-subheading6: $font-spacing-heading6 !default;
 $font-spacing-subheading7: $font-spacing-heading7 !default;
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-    color: $font-color-heading;
-    font-family: $font-family-heading;
-	font-weight: $font-weight-heading;
-	margin: $font-margin-heading;
+
+$heading-size-map: (
+	"heading1": $font-size-heading1,
+	"heading2": $font-size-heading2,
+	"heading3": $font-size-heading3,
+	"heading4": $font-size-heading4,
+	"heading5": $font-size-heading5,
+	"heading6": $font-size-heading6,
+	"heading7": $font-size-heading7,
+	"subheading1": $font-size-subheading1,
+	"subheading2": $font-size-subheading2,
+	"subheading3": $font-size-subheading3,
+	"subheading4": $font-size-subheading4,
+	"subheading5": $font-size-subheading5,
+	"subheading6": $font-size-subheading6,
+	"subheading7": $font-size-subheading7
+);
+
+$heading-spacing-map: (
+	"heading1": $font-spacing-heading1,
+	"heading2": $font-spacing-heading2,
+	"heading3": $font-spacing-heading3,
+	"heading4": $font-spacing-heading4,
+	"heading5": $font-spacing-heading5,
+	"heading6": $font-spacing-heading6,
+	"heading7": $font-spacing-heading7,
+	"subheading1": $font-spacing-subheading1,
+	"subheading2": $font-spacing-subheading2,
+	"subheading3": $font-spacing-subheading3,
+	"subheading4": $font-spacing-subheading4,
+	"subheading5": $font-spacing-subheading5,
+	"subheading6": $font-spacing-subheading6,
+	"subheading7": $font-spacing-subheading7
+);
+
+$heading-sizes: 1, 2, 3, 4, 5, 6, 7;
+
+@mixin heading($size: 1, $variant: "normal") {
+	$sizes: $heading-sizes;
+	@if not list-index($sizes, $size) {
+		@error "#{$size} is not a valid size. Expected one of #{$sizes}."
+	}
+	$variants: "normal", "sub";
+	@if not list-index($variants, $variant) {
+		@error "#{$variant} is not a valid variant. Expected one of #{$variants}."
+	}
+	
+	@if $variant == "normal" {
+		color: $font-color-heading;
+	    font-family: $font-family-heading;
+	    font-weight: $font-weight-heading;
+		line-height: $font-line-height-heading;
+		margin: $font-margin-heading;
+		margin-top: 0;
+	}
+	@if $variant == "sub" {
+		color: $font-color-heading;
+	    font-family: $font-family-subheading;
+	    font-weight: $font-weight-subheading;
+		line-height: $font-line-height-subheading;
+		margin: $font-margin-subheading;
+		margin-top: 0;
+	}
+	
+	$keys: ( "normal": heading, "sub": subheading );
+	$key: map-get($keys, $variant)#{$size};
+	@if map-has-key($map: $heading-size-map, $key: $key) {
+		font-size: map-get($map: $heading-size-map, $key: $key);
+	}
+	@if map-has-key($map: $heading-spacing-map, $key: $key) {
+		letter-spacing: map-get($map: $heading-spacing-map, $key: $key);
+	}
 }
 
-h1, .h1, %h1 {
-    font-family: $font-family-heading;
-    font-size: $font-size-heading1;
-    font-weight: $font-weight-heading;
-    letter-spacing: $font-spacing-heading1;
-	line-height: $font-line-height-heading;
-	margin: $font-margin-heading;
-	margin-top: 0;
-}
-.sh1, %sh1 {
-	font-family: $font-family-subheading;
-	font-size: $font-size-subheading1;
-	font-weight: $font-weight-subheading;
-    letter-spacing: $font-spacing-subheading1;
-	line-height: $font-line-height-subheading;
-	margin: $font-margin-subheading;
-	margin-top: 0;
-}
-
-h2, .h2, %h2 {
-    font-family: $font-family-heading;
-    font-size: $font-size-heading2;
-    font-weight: $font-weight-heading;
-    letter-spacing: $font-spacing-heading2;
-	line-height: $font-line-height-heading;
-	margin: $font-margin-heading;
-	margin-top: 0;
-}
-.sh2, %sh2 {
-	font-family: $font-family-subheading;
-	font-size: $font-size-subheading2;
-	font-weight: $font-weight-subheading;
-    letter-spacing: $font-spacing-subheading2;
-	line-height: $font-line-height-subheading;
-	margin: $font-margin-subheading;
-	margin-top: 0;
-}
-
-h3, .h3, %h3 {
-    font-family: $font-family-heading;
-    font-size: $font-size-heading3;
-    font-weight: $font-weight-heading;
-    letter-spacing: $font-spacing-heading3;
-	line-height: $font-line-height-heading;
-	margin: $font-margin-heading;
-	margin-top: 0;
-}
-.sh3, %sh3 {
-	font-family: $font-family-subheading;
-	font-size: $font-size-subheading3;
-	font-weight: $font-weight-subheading;
-    letter-spacing: $font-spacing-subheading3;
-	line-height: $font-line-height-subheading;
-	margin: $font-margin-subheading;
-	margin-top: 0;
-}
-
-h4, .h4, %h4 {
-    font-family: $font-family-heading;
-    font-size: $font-size-heading4;
-    font-weight: $font-weight-heading;
-    letter-spacing: $font-spacing-heading4;
-	line-height: $font-line-height-heading;
-	margin: $font-margin-heading;
-	margin-top: 0;
-}
-.sh4, %sh4 {
-	font-family: $font-family-subheading;
-	font-size: $font-size-subheading4;
-	font-weight: $font-weight-subheading;
-    letter-spacing: $font-spacing-subheading4;
-	line-height: $font-line-height-subheading;
-	margin: $font-margin-subheading;
-	margin-top: 0;
-}
-
-h5, .h5, %h5 {
-    font-family: $font-family-heading;
-    font-size: $font-size-heading5;
-    font-weight: $font-weight-heading;
-    letter-spacing: $font-spacing-heading5;
-	line-height: $font-line-height-heading;
-	margin: $font-margin-heading;
-	margin-top: 0;
-}
-.sh5, %sh5 {
-	font-family: $font-family-subheading;
-	font-size: $font-size-subheading5;
-	font-weight: $font-weight-subheading;
-    letter-spacing: $font-spacing-subheading5;
-	line-height: $font-line-height-subheading;
-	margin: $font-margin-subheading;
-	margin-top: 0;
-}
-
-h6, .h6, %h6 {
-    font-family: $font-family-heading;
-    font-size: $font-size-heading6;
-    font-weight: $font-weight-heading;
-    letter-spacing: $font-spacing-heading6;
-	line-height: $font-line-height-heading;
-	margin: $font-margin-heading;
-	margin-top: 0;
-}
-.sh6, %sh6 {
-	font-family: $font-family-subheading;
-	font-size: $font-size-subheading6;
-	font-weight: $font-weight-subheading;
-    letter-spacing: $font-spacing-subheading6;
-	line-height: $font-line-height-subheading;
-	margin: $font-margin-subheading;
-	margin-top: 0;
-}
-
-.h7, %h7 {
-    font-family: $font-family-heading;
-    font-size: $font-size-heading7;
-    font-weight: $font-weight-heading;
-    letter-spacing: $font-spacing-heading7;
-	line-height: $font-line-height-heading;
-	margin: $font-margin-heading;
-	margin-top: 0;
-}
-.sh7, %sh7 {
-	font-family: $font-family-subheading;
-	font-size: $font-size-subheading7;
-	font-weight: $font-weight-subheading;
-    letter-spacing: $font-spacing-subheading7;
-	line-height: $font-line-height-subheading;
-	margin: $font-margin-subheading;
-	margin-top: 0;
+// Render each size of heading in both variants
+@each $size in $heading-sizes {
+	h#{$size}, .h#{$size}, %h#{$size} {
+		@include heading($size);
+	}
+	.sh#{$size}, %sh#{$size} {
+		@include heading($size: $size, $variant: "sub");
+	}
 }
