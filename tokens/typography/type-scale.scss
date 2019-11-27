@@ -7,7 +7,7 @@ $font-size-tiny: 0.75rem !default;
 /// Copy
 $font-color-copy: $font-color !default;
 $font-family-copy: $font-family !default;
-$font-line-height-copy: 1.25 !default;
+$font-line-height-copy: 1.25 !default; // ! always use numbers only !
 $font-weight-copy: $font-weight !default;
 
 %font-base {
