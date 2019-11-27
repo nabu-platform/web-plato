@@ -9,6 +9,9 @@
 		},
 		"combo.scss": {
 			"url": "combo.scss"
+		},
+		"date.scss": {
+			"url": "date.scss"
 		}
 	}
 }

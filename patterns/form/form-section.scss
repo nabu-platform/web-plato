@@ -6,8 +6,8 @@ $plato-form_group_border-style: $border-style !default;
 $plato-form_group_border-width: 0 0 0 spacing("s") !default;
 $plato-form_group_padding: spacing("ml") !default;
 /// group - description 
-$plato-form_group_description_color: color-tint("secondary", "light");
-$plato-form_group_description_font-size: $font-size-base;
+$plato-form_group_description_color: color-tint("secondary", "dark") !default;
+$plato-form_group_description_font-size: $font-size-small !default;
 
 
 .plato-form_group {

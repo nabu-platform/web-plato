@@ -1,0 +1,27 @@
+// The date component inherits most functionality from the basic text field component
+
+//// field - icon
+$plato-form_date-component_field_icon_background: transparent !default;
+$plato-form_date-component_field_icon_color: $plato-form_component_field_icon_color !default;
+$plato-form_date-component_field_icon_content: "\e916" !default;
+$plato-form_date-component_field_icon_font-size: $plato-form_component_field_icon_font-size !default;
+$plato-form_date-component_field_icon_font-family: $plato-form_component_field_icon_font-family !default;
+$plato-form_date-component_field_icon_font-weight: $plato-form_component_field_icon_font-weight !default;
+
+.plato-form, %plato-form {
+	.plato-form_date-component, %plato-form_date-component {
+		.component_field-wrapper, %plato-form_component_field-wrapper {
+			.field_icon-wrapper, %plato-form_component_field_icon-wrapper {
+				.field_date-icon, %plato-form_component_field_date-icon {
+					background-color: $plato-form_date-component_field_icon_background;
+					&:before {
+						content: $plato-form_date-component_field_icon_content;
+						font-size: $plato-form_component_field_icon_font-size;
+						font-family: $plato-form_component_field_icon_font-family;
+						font-weight: $plato-form_component_field_icon_font-weight;
+					}
+				}
+			}
+		}
+	}
+}

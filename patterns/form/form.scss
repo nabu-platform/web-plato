@@ -4,8 +4,6 @@
 $plato-form_component_field_border-color: color-tint("neutral", "light");
 
 
-
-
  // TODO placeholders
  
  // TODO messages - multicolor
@@ -17,18 +15,34 @@ $plato-form_component_width: 100% !default;
 $plato-form_component_min-width: 16rem !default;
 
 /// label
-$plato-form_component_label_color: $font-color-copy !default;
-$plato-form_component_label_align: left !default;
-$plato-form_component_label_display: block !default;
-$plato-form_component_label_font-weight: 600 !default;
-$plato-form_component_label_margin: 0 0 spacing("s") !default;
+//// label - wrapper
+$plato-form_component_label-wrapper_color: $font-color-copy !default;
+$plato-form_component_label-wrapper_align: left !default;
+$plato-form_component_label-wrapper_display: block !default;
+$plato-form_component_label-wrapper_font-weight: 600 !default;
+$plato-form_component_label-wrapper_margin: 0 0 spacing("s") !default;
+//// label - label
+$plato-form_component_label_color: $plato-form_component_label-wrapper_color !default;
+$plato-form_component_label_align: $plato-form_component_label-wrapper_align !default;
+$plato-form_component_label_display: inline-block !default;
+$plato-form_component_label_font-weight: $plato-form_component_label-wrapper_font-weight !default;
+$plato-form_component_label_margin: $plato-form_component_label-wrapper_margin !default;
+//// label - info
+$plato-form_component_label-info_color: color-tint("secondary", "dark") !default;
+$plato-form_component_label-info_align: $plato-form_component_label-wrapper_align !default;
+$plato-form_component_label-info_display: inline-block !default;
+$plato-form_component_label-info_font-weight: $plato-form_component_label-wrapper_font-weight !default;
+$plato-form_component_label-info_margin: $plato-form_component_label-wrapper_margin !default;
 
+/// field - wrapper 
+$plato-form_component_field-wrapper_position: relative !default;
 /// field 
 $plato-form_component_field_border-color: $border-color !default;
 $plato-form_component_field_border-style: $border-style !default;
 $plato-form_component_field_border-width: $border-width !default;
 $plato-form_component_field_border: $plato-form_component_field_border-width $plato-form_component_field_border-style $plato-form_component_field_border-color !default;
 $plato-form_component_field_display: block !default;
+$plato-form_component_field_font-family: $font-family !default;
 $plato-form_component_field_font-size: $font-size-base !default;
 $plato-form_component_field_width: 100% !default;
 $plato-form_component_field_padding: spacing("sm") !default;
@@ -47,24 +61,50 @@ $plato-form_component_field_valid_border-width: $border-width !default;
 $plato-form_component_field_valid_border: $plato-form_component_field_valid_border-width $plato-form_component_field_valid_border-style $plato-form_component_field_valid_border-color !default;
 $plato-form_component_field_valid_color: color-tint("success", "dark") !default;
 $plato-form_component_field_valid_placeholder_color: color-tint("success", "dark") !default;
-//// field icon
-$plato-form_component_field_icon_color: $primary-color !default;
-$plato-form_component_field_icon_font-size: spacing("ml") !default;
-$plato-form_component_field_icon_font-family: "Font Awesome 5 Free" !default;
-$plato-form_component_field_icon_font-weight: 900 !default;
-$plato-form_component_field_icon_height: spacing("ml") !default;
-$plato-form_component_field_icon_position: absolute !default;
-$plato-form_component_field_icon_position_top: spacing("m") !default;
-$plato-form_component_field_icon_position_bottom: 0 !default;
-$plato-form_component_field_icon_position_left: none !default;
-$plato-form_component_field_icon_position_right: spacing("s") !default;
-$plato-form_component_field_icon_width: spacing("ml") !default;
+
+//// field - icon - wrapper
+$plato-form_component_field_icon-wrapper_align-items: center !default;
+$plato-form_component_field_icon-wrapper_display: flex !default;
+$plato-form_component_field_icon-wrapper_flex-flow: row nowrap !default;
+$plato-form_component_field_icon-wrapper_height: calc(#{$font-size-base} + (2 * #{$plato-form_component_field_padding})) !default;
+$plato-form_component_field_icon-wrapper_justify-content: center !default;
+$plato-form_component_field_icon-wrapper_position: absolute !default;
+$plato-form_component_field_icon-wrapper_position_top: $plato-form_component_field_border-width !default;
+$plato-form_component_field_icon-wrapper_position_bottom: 0 !default;
+$plato-form_component_field_icon-wrapper_position_left: none !default;
+$plato-form_component_field_icon-wrapper_position_right: 0 !default;
+$plato-form_component_field_icon-wrapper_width: $plato-form_component_field_icon-wrapper_height !default;
+//// field - icon
+$plato-form_component_field_icon_color: color-tint("secondary", "darkest") !default;
+$plato-form_component_field_icon_font-size: $font-icon-size !default;
+$plato-form_component_field_icon_font-family: $font-icon-family !default;
+$plato-form_component_field_icon_font-weight: $font-icon-weight !default;
 ///// field icon -invalid 
 $plato-form_component_field_icon_invalid_color: color-tint("danger", "dark") !default;
 $plato-form_component_field_icon_invalid_content: "\f00d" !default;
 ///// field icon -valid 
 $plato-form_component_field_icon_valid_color: color-tint("success", "dark") !default;
 $plato-form_component_field_icon_valid_content: "\f00c" !default;
+
+/// description - after 
+$plato-form_component_description-after_color: color-tint("neutral", "dark") !default;
+$plato-form_component_description-after_align: left !default;
+$plato-form_component_description-after_display: block !default;
+$plato-form_component_description-after_font-size: $font-size-small !default;
+$plato-form_component_description-after_font-weight: 400 !default;
+$plato-form_component_description-after_margin: spacing("s") 0 !default;
+/// description - after - icon
+$plato-form_component_description-after_icon_color: color-tint("primary", "base") !default;
+$plato-form_component_description-after_icon_font-size: $plato-form_component_description-after_font-size !default;
+/// description - after - label
+$plato-form_component_description-after_label_color: $plato-form_component_description-after_color !default;
+$plato-form_component_description-after_label_align: $plato-form_component_description-after_align !default;
+$plato-form_component_description-after_label_display: $plato-form_component_description-after_display !default;
+$plato-form_component_description-after_label_font-size: $plato-form_component_description-after_font-size !default;
+$plato-form_component_description-after_label_font-weight: $plato-form_component_description-after_font-weight !default;
+$plato-form_component_description-after_label_margin: 0 !default;
+
+
 //// invalid - messages
 $plato-form_component_messages_align: left !default;
 $plato-form_component_messages_color: color-tint("danger", "dark") !default;
@@ -80,62 +120,115 @@ $plato-form_component_messages_message_margin: spacing("sm") 0 !default;
 		position: relative;
 		width: $plato-form_component_width;
 		min-width: $plato-form_component_min-width;
-		.component_label, %plato-form_component_label {
-			color: $plato-form_component_label_color;
-			display: $plato-form_component_label_display;
-			font-weight: $plato-form_component_label_font-weight;
-			margin: $plato-form_component_label_margin;
-			text-align: $plato-form_component_label_align;
+		// .component_label, %plato-form_component_label {
+		// 	color: $plato-form_component_label_color;
+		// 	display: $plato-form_component_label_display;
+		// 	font-weight: $plato-form_component_label_font-weight;
+		// 	margin: $plato-form_component_label_margin;
+		// 	text-align: $plato-form_component_label_align;
+		// }
+		.component_label-wrapper, %plato-form_component_label-wrapper {
+				color: $plato-form_component_label-wrapper_color;
+				display: $plato-form_component_label-wrapper_display;
+				font-weight: $plato-form_component_label-wrapper_font-weight;
+				margin: $plato-form_component_label-wrapper_margin;
+				text-align: $plato-form_component_label-wrapper_align;
+			.component_label, %plato-form_component_label {
+				color: $plato-form_component_label_color;
+				display: $plato-form_component_label_display;
+				font-weight: $plato-form_component_label_font-weight;
+				margin: $plato-form_component_label_margin;
+				text-align: $plato-form_component_label_align;
+			}
+			.component_label-info, %plato-form_component_label-info {
+				color: $plato-form_component_label-info_color;
+				display: $plato-form_component_label-info_display;
+				font-weight: $plato-form_component_label-info_font-weight;
+				margin: $plato-form_component_label-info_margin;
+				text-align: $plato-form_component_label-info_align;
+			}
 		}
-		.component_field, %plato-form_component_field {
-			border: $plato-form_component_field_border;
-			display: $plato-form_component_field_display;
-			font-size: $plato-form_component_field_font-size;
-			padding: $plato-form_component_field_padding;
-			width: $plato-form_component_field_width;
-			&.field_invalid, &%plato-form_component_field_invalid {
-				border: $plato-form_component_field_invalid_border;
-				color: $plato-form_component_field_invalid_color;
-			}
-			&.field_valid, &%plato-form_component_field_valid {
-				border: $plato-form_component_field_valid_border;
-				color: $plato-form_component_field_valid_color;
-			}
-		}
-		.field_icon, %plato-form_component_field_icon {
-			height: $plato-form_component_field_icon_height;
-			position: $plato-form_component_field_icon_position;
-			top: $plato-form_component_field_icon_position_top;
-			bottom: $plato-form_component_field_icon_position_bottom;
-			left: $plato-form_component_field_icon_position_left;
-			right: $plato-form_component_field_icon_position_right;
-			width: $plato-form_component_field_icon_width;
-			&:before {
-				font-size: $plato-form_component_field_icon_font-size;
-				font-family: $plato-form_component_field_icon_font-family;
-				font-weight: $plato-form_component_field_icon_font-weight;
-			}
-			&.icon_invalid, &%plato-form_component_field_icon_invalid {
-				color: $plato-form_component_field_invalid_color;
-				&:before {
-					content: $plato-form_component_field_icon_invalid_content;
-					font-size: $plato-form_component_field_icon_font-size;
-					font-family: $plato-form_component_field_icon_font-family;
-					font-weight: $plato-form_component_field_icon_font-weight;
+		.component_field-wrapper, %plato-form_component_field-wrapper {
+			position: $plato-form_component_field-wrapper_position;
+			.component_field, %plato-form_component_field {
+				border: $plato-form_component_field_border;
+				display: $plato-form_component_field_display;
+				font-family: $plato-form_component_field_font-family;
+				font-size: $plato-form_component_field_font-size;
+				padding: $plato-form_component_field_padding;
+				width: $plato-form_component_field_width;
+				&.field_invalid, &%plato-form_component_field_invalid {
+					border: $plato-form_component_field_invalid_border;
+					color: $plato-form_component_field_invalid_color;
+				}
+				&.field_valid, &%plato-form_component_field_valid {
+					border: $plato-form_component_field_valid_border;
+					color: $plato-form_component_field_valid_color;
 				}
 			}
-			&.icon_valid, &%plato-form_component_field_icon_valid {
-				color: $plato-form_component_field_valid_color;
-				&:before {
-					content: $plato-form_component_field_icon_valid_content;
-					font-size: $plato-form_component_field_icon_font-size;
-					font-family: $plato-form_component_field_icon_font-family;
-					font-weight: $plato-form_component_field_icon_font-weight;
+			.field_icon-wrapper, %plato-form_component_field_icon-wrapper {
+				align-items: $plato-form_component_field_icon-wrapper_align-items;
+				display: $plato-form_component_field_icon-wrapper_display;
+				flex-flow: $plato-form_component_field_icon-wrapper_flex-flow;
+				justify-content: $plato-form_component_field_icon-wrapper_justify-content;
+				height: $plato-form_component_field_icon-wrapper_height;
+				position: $plato-form_component_field_icon-wrapper_position;
+				top: $plato-form_component_field_icon-wrapper_position_top;
+				bottom: $plato-form_component_field_icon-wrapper_position_bottom;
+				left: $plato-form_component_field_icon-wrapper_position_left;
+				right: $plato-form_component_field_icon-wrapper_position_right;
+				width: $plato-form_component_field_icon-wrapper_width;
+				.field_icon, %plato-form_component_field_icon {
+					color: $plato-form_component_field_icon_color;
+					&:before {
+						font-size: $plato-form_component_field_icon_font-size;
+						font-family: $plato-form_component_field_icon_font-family;
+						font-weight: $plato-form_component_field_icon_font-weight;
+					}
+					&.icon_invalid, &%plato-form_component_field_icon_invalid {
+						color: $plato-form_component_field_invalid_color;
+						&:before {
+							content: $plato-form_component_field_icon_invalid_content;
+							font-size: $plato-form_component_field_icon_font-size;
+							font-family: $plato-form_component_field_icon_font-family;
+							font-weight: $plato-form_component_field_icon_font-weight;
+						}
+					}
+					&.icon_valid, &%plato-form_component_field_icon_valid {
+						color: $plato-form_component_field_valid_color;
+						&:before {
+							content: $plato-form_component_field_icon_valid_content;
+							font-size: $plato-form_component_field_icon_font-size;
+							font-family: $plato-form_component_field_icon_font-family;
+							font-weight: $plato-form_component_field_icon_font-weight;
+						}
+					}
 				}
 			}
+			// TODO : what to do?
+			.field_icon, %plato-form_component_label ~ %plato-form_component_field_icon {
+				top: calc(2.7 * #{$plato-form_component_field_icon-wrapper_position_top});
+			}
 		}
-		.field_icon, %plato-form_component_label ~ %plato-form_component_field_icon {
-			top: calc(2.7 * #{$plato-form_component_field_icon_position_top});
+		.component_description-after, %plato-form_component_description-after {
+			color: $plato-form_component_description-after_color;
+			display: $plato-form_component_description-after_display;
+			font-size: $plato-form_component_description-after_font-size;
+			font-weight: $plato-form_component_description-after_font-weight;
+			margin: $plato-form_component_description-after_margin;
+			text-align: $plato-form_component_description-after_align;
+			.description-after_icon, %plato-form_component_description-after_icon {
+				color: $plato-form_component_description-after_icon_color;
+				font-size: $plato-form_component_description-after_icon_font-size;
+			}
+			.description-after_label, %plato-form_component_description-after_label {
+				color: $plato-form_component_description-after_label_color;
+				display: $plato-form_component_description-after_label_display;
+				font-size: $plato-form_component_description-after_label_font-size;
+				font-weight: $plato-form_component_description-after_label_font-weight;
+				margin: $plato-form_component_description-after_label_margin;
+				text-align: $plato-form_component_description-after_label_align;
+			}
 		}
 		.component_messages, %plato-form_component_messages {
 			color: $plato-form_component_messages_color;
