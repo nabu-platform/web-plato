@@ -8,7 +8,7 @@ $button-font-family: $font-family !default;
 $button-font-weight: $font-weight !default;
 $button-height: 3.375rem !default;
 $button-height-small: spacing("xl") !default;
-$button-height-large: spacing("xxxl") !default;
+$button-height-large: spacing("xxl") !default;
 
 $button-border-radius: $border-radius-none !default;
 $button-border-style: $border-style !default;
@@ -19,8 +19,10 @@ $button-padding-top: 0 !default;
 $button-padding-bottom: 0 !default;
 $button-padding-left: spacing("l") !default;
 $button-padding-right: spacing("l") !default;
+$button-padding-icon: spacing("xl") !default;
 $button-padding: $button-padding-top $button-padding-right $button-padding-bottom $button-padding-left !default;
-$button_has-icon_padding: $button-padding-top $button-padding-right $button-padding-bottom spacing("xl") !default;
+$button_has-icon_padding: $button-padding-top $button-padding-right $button-padding-bottom $button-padding-icon !default;
+$button_has-icon-right_padding: $button-padding-top $button-padding-icon $button-padding-bottom $button-padding-left !default;
 $button-text-transform: none !default;
 $button-transition: all 0.3s ease !default;
 $button-min-width: auto !default;
@@ -34,6 +36,7 @@ $button_icon-font-size: 1.6rem !default;
 $button_icon-position: absolute;
 $button_icon-top: calc(#{$button-height} / 2) !default;
 $button_icon-left: calc(#{$button-padding-left} / 2) !default;
+$button_icon-right: $button_icon-left !default;
 $button_icon-transform: translateY(-50%) !default;
 /// is-icon
 $button-icon-padding: 0 1rem !default;
@@ -121,6 +124,14 @@ $button-icon-padding: 0 1rem !default;
 	padding: $button_has-icon_padding;
 }
 
+@mixin button-options-has-icon-right {
+	padding: $button_has-icon-right_padding;
+}
+
+@mixin button-options-full {
+	width: 100%;
+}
+
 @mixin button-base {
 	border: $button-border;
 	border-radius: $button-border-radius;
@@ -143,6 +154,9 @@ $button-icon-padding: 0 1rem !default;
 	&.large {
 		@include button-large;
 	}
+	&.small {
+		@include button-small;
+	}
 	&.round {
 		border-radius: $button-border-radius-round;
 	}
@@ -150,10 +164,13 @@ $button-icon-padding: 0 1rem !default;
 		border-radius: 0;
 	}
 	&.full {
-		width: 100%;
+		@include button-options-full;
 	}
 	&.has-icon {
 		@include button-options-has-icon;
+	}
+	&.has-icon-right {
+		@include button-options-has-icon-right;
 	}
 	.icon {
 		font-size: $button_icon-font-size;
@@ -162,10 +179,15 @@ $button-icon-padding: 0 1rem !default;
 		left: $button_icon-left;
 		transform: $button_icon-transform;
 	}
+	&.has-icon-right .icon {
+		left: auto;
+		right: $button_icon-right;
+	}
 	&.is-icon {
-		padding: $button-icon-padding;
 		.icon {
+			left: 50%;
 			margin: 0;
+    		transform: translate(-50%, -50%);
 		}
 	}
 	span {

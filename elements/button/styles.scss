@@ -108,7 +108,7 @@ $button-color-map: (
 	}
 }
 
-@mixin button-generator($color: "primary", $style: "regular", $size: "normal", $options: ("round": false, "square": false, "full": false, "has-icon": false)) {
+@mixin button-generator($color: "primary", $style: "regular", $size: "normal", $options: ("round": false, "square": false, "full": false, "has-icon": false, "has-icon-right": false)) {
 	$color-color: button-color-map-get-color($color, "color");
 	$color-contrast: button-color-map-get-color($color, "contrast");
 	$color-background: button-color-map-get-color-for-style($color, "background", $style);
@@ -148,6 +148,13 @@ $button-color-map: (
 	/// options - has-icon 
 	@if map-get($options, "has-icon") == true {
 		@include button-options-has-icon;
+	}
+	@else if map-get($options, "has-icon-right") == true {
+		@include button-options-has-icon-right;
+	}
+	/// options - full
+	@if map-get($options, "full") == true {
+		@include button-options-full;
 	}
 }
 
@@ -207,6 +214,7 @@ button, .button, %button {
 	}
 	&.has-icon-right {
 		.icon, .fa {
+			margin-right: 0;
 			margin-left: 0.5rem;
 		}
 	}
