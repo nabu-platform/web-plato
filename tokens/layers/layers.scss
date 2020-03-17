@@ -14,6 +14,13 @@ $layers-levels: (
 	"focus": $layer-level-focus
 );
 
+$layers-levels-z: (
+	"flat": 1,
+	"low": 10,
+	"middle": 20,
+	"high": 30
+);
+
 @function layers($level: "low") {
 	@if map-has-key($layers-levels, $level) {
 		@return map-get($layers-levels, $level);
@@ -24,8 +31,19 @@ $layers-levels: (
 	}
 }
 
+@function layers-z($level: "low") {
+	@if map-has-key($layers-levels-z, $level) {
+		@return map-get($layers-levels-z, $level);
+	}
+	@else {
+	    @warn "Unknown layers level z-index '#{$level}'.";
+	    @return null;
+	}
+}
+
 @mixin layer-level($level: "low") {
 	box-shadow: layers($level);
+	z-index: layers-z($level);
 	@if ($level != "flat") {
 		&:focus, &.focused {
 			box-shadow: layers($level), layers("focus");

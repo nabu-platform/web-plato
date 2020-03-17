@@ -28,11 +28,11 @@ $border-dashed-light: $border-width-light-dashed $border-style-light-dashed $bor
 /// Heavy
 $border-color-heavy: $border-color;
 $border-style-heavy: $border-style;
-$border-width-heavy: $border-width;
+$border-width-heavy: $border-width-heavy;
 
 $border-color-heavy-dashed: $border-color-dashed;
 $border-style-heavy-dashed: $border-style-dashed;
-$border-width-heavy-dashed: $border-width-dashed;
+$border-width-heavy-dashed: $border-width-heavy;
 
 $border-heavy: $border-width-heavy $border-style-heavy $border-color-heavy;
 $border-dashed-heavy: $border-width-heavy-dashed $border-style-heavy-dashed $border-color-heavy-dashed;

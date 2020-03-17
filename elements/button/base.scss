@@ -27,6 +27,8 @@ $button-text-transform: none !default;
 $button-transition: all 0.3s ease !default;
 $button-min-width: auto !default;
 
+$button-text-decoration-ghost: underline !default;
+
 $button-border-radius-round: calc(#{$button-height} / 2) !default;
 
 // TODO : button icon is dependent on button size (normal, large, small)
@@ -68,15 +70,6 @@ $button-icon-padding: 0 1rem !default;
 
 @mixin button-colorize($property, $color) {
 	#{$property}: $color;
-	&:hover {
-		#{$property}: lighten($color, 10);
-	}
-	&:active, &.active {
-		#{$property}: lighten($color, 20);
-	} 
-	&:disabled, &.disabled {
-		#{$property}: lighten($color, 40);
-	}
 }
 
 @mixin button-background($color) {
@@ -88,19 +81,22 @@ $button-icon-padding: 0 1rem !default;
 @mixin button-color($color) {
 	@include button-colorize("color", $color);
 }
-@mixin button-outline($color) {
-	background-color: transparent;
+@mixin button-outline($color, $border: $color, $background: transparent) {
+	background-color: $background;
 	border-width: $button-border-width;
 	border-style: $button-border-style;
-	@include button-border($color);
+	@include button-border($border);
 	@include button-color($color);
 }
-@mixin button-ghost($color) {
-	background-color: transparent;
+@mixin button-ghost($color, $background: transparent) {
+	background-color: $background;
 	border: none;
 	@include button-color($color);
 	&:hover {
-		background-color: transparent;
+		background-color: $background;
+	}
+	span:not(.icon) {
+		text-decoration: $button-text-decoration-ghost;
 	}
 }
 

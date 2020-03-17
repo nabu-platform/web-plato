@@ -11,6 +11,14 @@ $button-color-success-contrast: $success-contrast !default;
 $button-color-warning: $warning-color !default;
 $button-color-warning-contrast: $warning-contrast !default;
 
+// borders 
+$button-color-border-outline: color-tint("primary", "base") !default;
+$button-color-border-outline-primary: color-tint("primary", "base") !default;
+$button-color-border-outline-secondary: color-tint("secondary", "base") !default;
+$button-color-border-outline-danger: color-tint("danger", "base") !default;
+$button-color-border-outline-success: color-tint("success", "base") !default;
+$button-color-border-outline-warning: color-tint("warning", "base") !default;
+
 // backgrounds 
 $button-color-background-outline: rgba(0, 0, 0, 0) !default;
 $button-color-background-outline-primary: $button-color-background-outline !default;
@@ -26,6 +34,44 @@ $button-color-background-ghost-danger: $button-color-background-ghost !default;
 $button-color-background-ghost-success: $button-color-background-ghost !default;
 $button-color-background-ghost-warning: $button-color-background-ghost !default;
 
+// hover 
+$button-color-primary-hover: color-tint("primary", "dark") !default;
+$button-color-primary-contrast-hover: $button-color-primary-contrast !default;
+$button-color-secondary-hover: color-tint("secondary", "dark") !default;
+$button-color-secondary-contrast-hover: $button-color-secondary-contrast !default;
+$button-color-danger-hover: color-tint("danger", "dark") !default;
+$button-color-danger-contrast-hover: $button-color-danger-contrast !default;
+$button-color-success-hover: color-tint("success", "dark") !default;
+$button-color-success-contrast-hover: $button-color-success-contrast !default;
+$button-color-warning-hover: color-tint("warning", "dark") !default;
+$button-color-warning-contrast-hover: $button-color-warning-contrast !default;
+// hover - transform 
+$button-color-hover-transform: translate(0, 1px) !default;
+// hover - borders 
+$button-color-border-outline-hover: $button-color-border-outline !default;
+$button-color-border-outline-primary-hover: $button-color-border-outline-primary !default;
+$button-color-border-outline-secondary-hover: $button-color-border-outline-secondary !default;
+$button-color-border-outline-danger-hover: $button-color-border-outline-danger !default;
+$button-color-border-outline-success-hover: $button-color-border-outline-success !default;
+$button-color-border-outline-warning-hover: $button-color-border-outline-warning !default;
+// hover - backgrounds 
+$button-color-background-outline-hover: $button-color-background-outline !default;
+$button-color-background-outline-primary-hover: color-tint("primary", "lightest") !default;
+$button-color-background-outline-secondary-hover: color-tint("secondary", "lightest") !default;
+$button-color-background-outline-danger-hover: color-tint("danger", "lightest") !default;
+$button-color-background-outline-success-hover: color-tint("success", "lightest") !default;
+$button-color-background-outline-warning-hover: color-tint("warning", "lightest") !default;
+
+$button-color-background-ghost-hover: $button-color-background-ghost !default;
+$button-color-background-ghost-primary-hover: $button-color-background-ghost-primary !default;
+$button-color-background-ghost-secondary-hover: $button-color-background-ghost-secondary !default;
+$button-color-background-ghost-danger-hover: $button-color-background-ghost-danger !default;
+$button-color-background-ghost-success-hover: $button-color-background-ghost-success !default;
+$button-color-background-ghost-warning-hover: $button-color-background-ghost-warning !default;
+
+// disabled 
+$button-color-disabled-opacity: 0.7 !default;
+
 
 
 // TODO : a-button colors
@@ -38,6 +84,9 @@ $button-color-map: (
 			regular: $button-color-primary,
 			outline: $button-color-background-outline-primary,
 			ghost: $button-color-background-ghost-primary
+		),
+		border: (
+			outline: $button-color-border-outline-primary
 		)
 	),
 	secondary: (
@@ -47,6 +96,9 @@ $button-color-map: (
 			regular: $button-color-secondary,
 			outline: $button-color-background-outline-secondary,
 			ghost: $button-color-background-ghost-secondary
+		),
+		border: (
+			outline: $button-color-border-outline-secondary
 		)
 	),
 	danger: (
@@ -56,6 +108,9 @@ $button-color-map: (
 			regular: $button-color-danger,
 			outline: $button-color-background-outline-danger,
 			ghost: $button-color-background-ghost-danger
+		),
+		border: (
+			outline: $button-color-border-outline-danger
 		)
 	),
 	success: (
@@ -65,6 +120,9 @@ $button-color-map: (
 			regular: $button-color-success,
 			outline: $button-color-background-outline-success,
 			ghost: $button-color-background-ghost-success
+		),
+		border: (
+			outline: $button-color-border-outline-success
 		)
 	),
 	warning: (
@@ -74,13 +132,79 @@ $button-color-map: (
 			regular: $button-color-warning,
 			outline: $button-color-background-outline-warning,
 			ghost: $button-color-background-ghost-warning
+		),
+		border: (
+			outline: $button-color-border-outline-warning
 		)
 	)
 ) !default;
 
-@function button-color-map-get-color($color, $variant) {
-	@if map-has-key($map: $button-color-map, $key: $color) {
-		$color-map: map-get($map: $button-color-map, $key: $color);
+$button-states-color-map: (
+	primary: (
+		color: $button-color-primary-hover,
+		contrast: $button-color-primary-contrast-hover,
+		background: (
+			regular: $button-color-primary-hover,
+			outline: $button-color-background-outline-primary-hover,
+			ghost: $button-color-background-ghost-primary-hover
+		),
+		border: (
+			outline: $button-color-primary-hover
+		)
+	),
+	secondary: (
+		color: $button-color-secondary-hover,
+		contrast: $button-color-secondary-contrast-hover,
+		background: (
+			regular: $button-color-secondary-hover,
+			outline: $button-color-background-outline-secondary-hover,
+			ghost: $button-color-background-ghost-secondary-hover
+		),
+		border: (
+			outline: $button-color-secondary-hover
+		)
+	),
+	danger: (
+		color: $button-color-danger-hover,
+		contrast: $button-color-danger-contrast-hover,
+		background: (
+			regular: $button-color-danger-hover,
+			outline: $button-color-background-outline-danger-hover,
+			ghost: $button-color-background-ghost-danger-hover
+		),
+		border: (
+			outline: $button-color-danger-hover
+		)
+	),
+	success: (
+		color: $button-color-success-hover,
+		contrast: $button-color-success-contrast-hover,
+		background: (
+			regular: $button-color-success-hover,
+			outline: $button-color-background-outline-success-hover,
+			ghost: $button-color-background-ghost-success-hover
+		),
+		border: (
+			outline: $button-color-success-hover
+		)
+	),
+	warning: (
+		color: $button-color-warning-hover,
+		contrast: $button-color-warning-contrast-hover,
+		background: (
+			regular: $button-color-warning-hover,
+			outline: $button-color-background-outline-warning-hover,
+			ghost: $button-color-background-ghost-warning-hover
+		),
+		border: (
+			outline: $button-color-warning-hover
+		)
+	),
+) !default;
+
+@function button-color-map-get-color($color, $variant, $color-map: $button-color-map) {
+	@if map-has-key($map: $color-map, $key: $color) {
+		$color-map: map-get($map: $color-map, $key: $color);
 		@if map-has-key($map: $color-map, $key: $variant) {
 			$color-variant: map-get($map: $color-map, $key: $variant);
 			@return $color-variant;
@@ -96,8 +220,8 @@ $button-color-map: (
 	}
 }
 
-@function button-color-map-get-color-for-style($color, $variant, $style) {
-	$variant-styles: button-color-map-get-color($color, $variant);
+@function button-color-map-get-color-for-style($color, $variant, $style, $color-map: $button-color-map) {
+	$variant-styles: button-color-map-get-color($color, $variant, $color-map);
 	@if map-has-key($map: $variant-styles, $key: $style) {
 		$style-color: map-get($map: $variant-styles, $key: $style);
 		@return $style-color;
@@ -108,26 +232,44 @@ $button-color-map: (
 	}
 }
 
-@mixin button-generator($color: "primary", $style: "regular", $size: "normal", $options: ("round": false, "square": false, "full": false, "has-icon": false, "has-icon-right": false)) {
-	$color-color: button-color-map-get-color($color, "color");
-	$color-contrast: button-color-map-get-color($color, "contrast");
-	$color-background: button-color-map-get-color-for-style($color, "background", $style);
+@mixin button-generator-colors($color, $style, $size, $color-map) {
+	$color-color: button-color-map-get-color($color, "color", $color-map);
+	$color-contrast: button-color-map-get-color($color, "contrast", $color-map);
+	$color-background: button-color-map-get-color-for-style($color, "background", $style, $color-map);
 	color: $color-contrast;
 	@include button-background($color-background);
-	@include button-base;
 	
 	// style
 	@if $style == "outline" {
-		@include button-outline($color-color);
+		$color-border: button-color-map-get-color-for-style($color, "border", $style, $color-map);
+		@include button-outline($color-color, $color-border, $color-background);
 	}
 	@else if $style == "ghost" {
-		@include button-ghost($color-color);
+		@include button-ghost($color-color, $color-background);
 	}
 	@else if $style == "regular" {
 		// do nothing
 	}
 	@else if $style != null {
 		@error "The requested style '#{$style}' is not available.";
+	}
+}
+
+@mixin button-generator($color: "primary", $style: "regular", $size: "normal", $options: ("round": false, "square": false, "full": false, "has-icon": false, "has-icon-right": false)) {
+	@include button-base;
+	
+	$color-map: $button-color-map;
+	@include button-generator-colors($color: $color, $style: $style, $size: $size, $color-map: $color-map);
+	
+	&:hover, &:focus, &:active, &:disabled {
+		$color-map: $button-states-color-map;
+		@include button-generator-colors($color: $color, $style: $style, $size: $size, $color-map: $color-map);
+	}
+	&:hover {
+		transform: $button-color-hover-transform;
+	}
+	&:disabled {
+		opacity: $button-color-disabled-opacity;
 	}
 	
 	// size 

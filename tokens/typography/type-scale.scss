@@ -50,6 +50,19 @@ p, %paragraph, .plato-paragraph {
 	font-style: italic;
 }
 
+/// Shadow 
+
+$text-shadow-light: 0 0 0.5em rgba(255, 255, 255, 1);
+$text-shadow-dark: 0 0 0.5em rgba(0, 0, 0, 0.75);
+
+.text-shadow-light {
+	text-shadow: $text-shadow-light;
+}
+
+.text-shadow-dark {
+	text-shadow: $text-shadow-dark;
+}
+
 /// Heading
 $font-color-heading: $font-color !default;
 $font-family-heading: $font-family-alt !default;
@@ -78,7 +91,7 @@ $font-color-subheading: $font-color-heading !default;
 $font-family-subheading: $font-family-heading !default;
 $font-line-height-subheading: $font-line-height-heading !default;
 $font-margin-subheading: $font-margin-heading !default;
-$font-weight-subheading: $font-weight-light !default;
+$font-weight-subheading: $font-weight !default;
 
 $font-size-subheading1: $font-size-heading1 !default;
 $font-size-subheading2: $font-size-heading2 !default;
