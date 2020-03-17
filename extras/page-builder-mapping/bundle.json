@@ -9,19 +9,19 @@
         },
         "form": {
             "checkbox.scss": {
-                "url": "checkbox.scss"
+                "url": "form/checkbox.scss"
             },
             "combo.scss": {
-                "url": "combo.scss"
+                "url": "form/combo.scss"
             },
             "date.scss": {
-                "url": "date.scss"
+                "url": "form/date.scss"
             },
             "form.scss": {
-                "url": "form.scss"
+                "url": "form/form.scss"
             },
             "radio.scss": {
-                "url": "radio.scss"
+                "url": "form/radio.scss"
             }
         }
 	}
