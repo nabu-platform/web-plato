@@ -1,0 +1,8 @@
+{
+	"name": "web-plato-elements-modal",
+	"resources": {
+		"modal.scss": {
+			"url": "modal.scss"
+		}
+	}
+}
