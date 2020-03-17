@@ -41,6 +41,10 @@
             "button.json": {
                 "type": "bundle",
                 "url": "elements/button/bundle.json"
+            },
+            "modal.json": {
+                "type": "bundle",
+                "url": "elements/modal/bundle.json"
             }
         },
         "patterns": {
