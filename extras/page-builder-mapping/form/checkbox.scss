@@ -1,0 +1,15 @@
+#main {
+	.n-form-checkbox {
+		input[checked] + label:before {
+			background-color: color-tint("secondary", "dark");
+			box-shadow: none;
+		}
+		label {
+			&:before {
+				box-shadow: none;
+				border: $border;
+				border-color: color-tint("secondary", "dark");
+			}
+		}
+	}
+}

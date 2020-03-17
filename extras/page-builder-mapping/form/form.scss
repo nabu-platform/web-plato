@@ -1,0 +1,90 @@
+// /// form wrapper
+
+.n-form {
+	extends: ".plato-form";
+	.n-form-component {
+		extends: ".plato-form_component";
+		.n-form-label-wrapper {
+			extends: ".component_label-wrapper";
+			.n-form-label {
+				extends: ".component_label";
+			}
+			.n-form-component-description-info {
+				extends: ".component_label-info";
+				.n-icon {
+					position: static;
+					extends: ".component_label-info_icon";
+				}
+				.n-info-content {
+					extends: ".component_label-info_content";
+				}
+			}
+		}
+		.n-form-input-wrapper {
+			extends: ".component_field-wrapper";
+			.field {
+				extends: ".component_field";
+				&.n-form-invalid {
+					extends: ".field_invalid";
+				}
+				&.n-form-valid {
+					extends: ".field_valid";
+				}
+			}
+			.n-form-suffix {
+				extends: ".field_suffix";
+				.icon {
+					extends: ".suffix_icon";
+				}
+				// TODO - remove 
+				.fa {
+					extends: ".suffix_icon";
+				}
+				.n-icon {
+					extends: ".suffix_icon";
+				}
+			}
+		}
+		// field icon invalid 
+		.field.n-form-invalid ~ .n-icon {
+			extends: ".icon_invalid";
+		}
+		// field icon valid 
+		// .field.n-form-valid ~.n-icon {
+		// 	extends: ".icon_valid";
+		// }
+		.n-form-component-after {
+			extends: ".component_after";
+			.icon {
+				extends: ".after_icon";
+			}
+			.n-form-component-after-label {
+				extends: ".after_label";
+			}
+		}
+		.n-messages {
+			extends: ".component_messages";
+			.n-message {
+				extends: ".component_message";
+				.title {
+					extends: ".message_title";
+				}
+			}
+		}
+	}
+}
+.n-form-component.has-suffix-icon {
+	extends: ".has-suffix-icon";
+}
+.n-form-component.n-form-invalid {
+	extends: ".component_invalid";
+	.n-input-result {
+		extends: ".validation_icon"
+	}
+}
+.n-form-component.n-form-valid {
+	extends: ".component_valid";
+	.n-input-result {
+		extends: ".validation_icon"
+	}
+}

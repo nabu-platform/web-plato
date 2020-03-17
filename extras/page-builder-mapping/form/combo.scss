@@ -1,0 +1,38 @@
+/// form wrapper
+
+.n-form .n-form-address {
+	width: 100%;
+	.n-form-address-form .n-form-combo {
+		margin-bottom: 0;
+	}
+}
+
+.n-form {
+	.n-form-combo {
+		extends: ".plato-form_combo";
+		.n-input-combo {
+			extends: ".plato-form_combo_input";
+			.n-input-combo-input-container {
+				extends: ".input_container";
+				.n-input-combo-input {
+					extends: ".input_field";
+				}
+				.n-icon {
+					extends: ".input_icon";
+				}
+				.n-input-combo-dropdown {
+					extends: ".combo_dropdown";
+					.n-input-combo-dropdown-value {
+						extends: ".dropdown_value";
+						&.pondering {
+							extends: ".selected";
+						}
+					}
+				}
+			}
+			.n-form-combo-bottom {
+				display: none;
+			}
+		}
+	}
+}

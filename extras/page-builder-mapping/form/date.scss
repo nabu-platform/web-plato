@@ -1,0 +1,50 @@
+// date wrapper
+
+#main {
+	.n-form {
+		.n-form-date-input {
+			extends: ".plato-form_date-component";
+			.n-form-input-wrapper {
+				extends: ".component_field-wrapper";
+				.field {
+					extends: ".component_field";
+				}
+				.n-form-date-icon {
+					extends: ".field_date-icon";
+				}
+				.n-input-result {
+					display: none;
+				}
+			}
+		}
+	}
+	
+	.n-form-date-input.n-form-valid {
+		extends: ".component_valid";
+	}
+	.n-form-date-input.n-form-invalid {
+		extends: ".component_invalid";
+	}
+	
+	.n-form .n-input-date {
+		extends: ".plato-form_date-picker";
+		.table {
+			extends: ".date-picker_table";
+			caption {
+				extends: ".date-picker_table_caption";
+			}
+			head {
+				extends: ".date-picker_table_head";
+			}
+			body {
+				extends: ".date-picker_table_body";
+				.n-input-date-label {
+					extends: ".date_picker_day";
+				}
+			}
+		}
+		.n-input-date-legend {
+			extends: ".date-picker_legend";
+		}
+	}
+}

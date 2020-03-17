@@ -1,0 +1,6 @@
+.n-prompt {
+	extends: ".plato-overlay-dark";
+	.n-prompt-content {
+		@extend %plato-modal;
+	}
+}
