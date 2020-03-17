@@ -1,5 +1,5 @@
 {
-	"name": "web-plato-extras-theme-mapping",
+	"name": "web-plato--extras--theme-mapping",
 	"resources": {
 		"color-mapping.scss": {
 			"url": "color-mapping.scss"
