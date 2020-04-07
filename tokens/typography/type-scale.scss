@@ -12,6 +12,10 @@ $font-family-copy: $font-family !default;
 $font-line-height-copy: 1.25 !default; // ! always use numbers only !
 $font-weight-copy: $font-weight !default;
 
+body, * {
+	font-size: $font-size-base;
+}
+
 %font-base {
 	font-size: $font-size-base; }
 
