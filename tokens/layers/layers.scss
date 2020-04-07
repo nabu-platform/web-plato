@@ -1,23 +1,31 @@
 // ---------------------------------------------- layer levels
 
 $layer-level-flat: none !default;
-$layer-level-low: 0 2px 4px rgba(0, 0, 0, 0.16) !default;
-$layer-level-middle: 0 4px 8px rgba(0, 0, 0, 0.16) !default;
-$layer-level-high: 0 8px 16px rgba(0, 0, 0, 0.16) !default;
-$layer-level-focus: 0 0 12px rgba(0, 126, 158, 1) !default;
+$layer-level-low: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !default;
+$layer-level-low-middle: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !default;
+$layer-level-middle: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23) !default;
+$layer-level-middle-high: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !default;
+$layer-level-high: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22) !default;
+$layer-level-focus: none !default;
 
 $layers-levels: (
 	"flat": $layer-level-flat,
 	"low": $layer-level-low,
+	"low-middle": $layer-level-low-middle,
 	"middle": $layer-level-middle,
+	"middle-high": $layer-level-middle-high,
 	"high": $layer-level-high,
 	"focus": $layer-level-focus
 );
 
+$layers-level-transition: box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
 $layers-levels-z: (
 	"flat": 1,
 	"low": 10,
+	"low-middle": 15,
 	"middle": 20,
+	"middle-high": 25,
 	"high": 30
 );
 
@@ -43,6 +51,7 @@ $layers-levels-z: (
 
 @mixin layer-level($level: "low") {
 	box-shadow: layers($level);
+	transition: $layers-level-transition;
 	z-index: layers-z($level);
 	@if ($level != "flat") {
 		&:focus, &.focused {
@@ -63,8 +72,16 @@ $layers-levels-z: (
     @include layer-level("low");
 }
 
+.layer-level-low-middle, %layer-level-low-middle {
+    @include layer-level("low-middle");
+}
+
 .layer-level-middle, %layer-level-middle {
     @include layer-level("middle");
+}
+
+.layer-level-middle-high, %layer-level-middle-high {
+    @include layer-level("middle-high");
 }
 
 .layer-level-high, %layer-level-high {
