@@ -1,7 +1,8 @@
 // ---------------------------------------------- plato card
 
 // card
-$plato-card_background: color-tint("primary", "lightest") !default;
+$plato-card_background: $color-neutral-white !default;
+$plato-card_border-radius: 4px !default;
 $plato-card_color: color-tint("primary", "darkest") !default;
 $plato-card_margin: spacing("m") !default;
 $plato-card_padding: spacing("m") spacing("ml") spacing("l") !default;
@@ -15,6 +16,7 @@ $plato-card_actions_padding: 0 !default;
 .plato-card, %plato-card {
 	@extend %layer-level-low;
 	background-color: $plato-card_background;
+	border-radius: $plato-card_border-radius;
 	color: $plato-card_color;
 	margin: $plato-card_margin;
 	padding: $plato-card_padding;
