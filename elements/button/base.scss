@@ -7,8 +7,6 @@ $button-font-size: $font-size-base !default;
 $button-font-family: $font-family !default;
 $button-font-weight: $font-weight !default;
 $button-height: 3.375rem !default;
-$button-height-small: spacing("xl") !default;
-$button-height-large: spacing("xxl") !default;
 
 $button-border-radius: $border-radius-none !default;
 $button-border-style: $border-style !default;
@@ -44,13 +42,43 @@ $button_icon-transform: translateY(-50%) !default;
 $button-icon-padding: 0 1rem !default;
 
 
+/// small 
+$button-small-font-size: $font-size-small !default;
+$button-small-height: spacing("xl") !default;
+
+$button-small-margin: 0 !default;
+$button-small-padding-top: 0 !default;
+$button-small-padding-bottom: 0 !default;
+$button-small-padding-left: spacing("m") !default;
+$button-small-padding-right: spacing("m") !default;
+$button-small-padding-icon: spacing("l") !default;
+$button-small-padding: $button-small-padding-top $button-small-padding-right $button-small-padding-bottom $button-small-padding-left !default;
+$button-small_has-icon_padding: $button-small-padding-top $button-small-padding-right $button-small-padding-bottom $button-small-padding-icon !default;
+$button-small_has-icon-right_padding: $button-small-padding-top $button-small-padding-icon $button-small-padding-bottom $button-small-padding-left !default;
+
+
+/// large 
+$button-large-font-size: $font-size-large !default;
+$button-large-height: spacing("xxl") !default;
+
+$button-large-margin: 0 !default;
+$button-large-padding-top: 0 !default;
+$button-large-padding-bottom: 0 !default;
+$button-large-padding-left: spacing("m") !default;
+$button-large-padding-right: spacing("m") !default;
+$button-large-padding-icon: spacing("l") !default;
+$button-large-padding: $button-large-padding-top $button-large-padding-right $button-large-padding-bottom $button-large-padding-left !default;
+$button-large_has-icon_padding: $button-large-padding-top $button-large-padding-right $button-large-padding-bottom $button-large-padding-icon !default;
+$button-large_has-icon-right_padding: $button-large-padding-top $button-large-padding-icon $button-large-padding-bottom $button-large-padding-left !default;
+
+
 // --------------------------------------------------------- functions 
 
 @function button-get-size($size: "normal") {
 	$button-sizes: (
-		small: $button-height-small,
+		small: $button-small-height,
 		normal: $button-height,
-		large: $button-height-large
+		large: $button-large-height
 	);
 	@if map-has-key($map: $button-sizes, $key: $size) {
 		@return map-get($map: $button-sizes, $key: $size);
@@ -101,6 +129,7 @@ $button-icon-padding: 0 1rem !default;
 }
 
 @mixin button-small {
+	font-size: $button-small-font-size;
 	height: button-get-size("small");
 	line-height: button-get-size("small");
 	.icon {
@@ -109,6 +138,7 @@ $button-icon-padding: 0 1rem !default;
 }
 
 @mixin button-large {
+	font-size: $button-large-font-size;
 	height: button-get-size("large");
 	line-height: button-get-size("large");
 	.icon {
@@ -116,12 +146,28 @@ $button-icon-padding: 0 1rem !default;
 	}
 }
 
-@mixin button-options-has-icon {
-	padding: $button_has-icon_padding;
+@mixin button-options-has-icon($size: "normal") {
+	@if $size == "small" {
+		padding: $button-small_has-icon_padding;
+	}
+	@else if $size == "large" {
+		padding: $button-large_has-icon_padding;
+	}
+	@else {
+		padding: $button_has-icon_padding;
+	}
 }
 
-@mixin button-options-has-icon-right {
-	padding: $button_has-icon-right_padding;
+@mixin button-options-has-icon-right($size: "normal") {
+	@if $size == "small" {
+		padding: $button-small_has-icon-right_padding;
+	}
+	@else if $size == "large" {
+		padding: $button-large_has-icon-right_padding;
+	}
+	@else {
+		padding: $button_has-icon-right_padding;
+	}
 }
 
 @mixin button-options-full {
@@ -149,9 +195,21 @@ $button-icon-padding: 0 1rem !default;
 	min-width: $button-min-width;
 	&.large {
 		@include button-large;
+		&.has-icon {
+			@include button-options-has-icon("large");
+		}
+		&.has-icon-right {
+			@include button-options-has-icon-right("large");
+		}
 	}
 	&.small {
 		@include button-small;
+		&.has-icon {
+			@include button-options-has-icon("small");
+		}
+		&.has-icon-right {
+			@include button-options-has-icon-right("small");
+		}
 	}
 	&.round {
 		border-radius: $button-border-radius-round;
