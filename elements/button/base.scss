@@ -132,6 +132,7 @@ $button-large_has-icon-right_padding: $button-large-padding-top $button-large-pa
 	font-size: $button-small-font-size;
 	height: button-get-size("small");
 	line-height: button-get-size("small");
+	padding: $button-small-padding;
 	.icon {
 		top: calc(#{button-get-size("small")} / 2);
 	}
@@ -141,6 +142,7 @@ $button-large_has-icon-right_padding: $button-large-padding-top $button-large-pa
 	font-size: $button-large-font-size;
 	height: button-get-size("large");
 	line-height: button-get-size("large");
+	padding: $button-large-padding;
 	.icon {
 		top: calc(#{button-get-size("large")} / 2);
 	}
