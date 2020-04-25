@@ -4,6 +4,7 @@ $plato-form_combo_width: 100% !default;
 $plato-form_combo_input_color: $font-color-copy !default;
 /// combo - input field 
 $plato-form_combo_input_field_border: $plato-form_component_field_border !default;
+$plato-form_combo_input_field_border-radius: $plato-form_component_field_border-radius !default;
 $plato-form_combo_input_field_display: $plato-form_component_field_display !default;
 $plato-form_combo_input_field_font-family: $plato-form_component_field_font-family !default;
 $plato-form_combo_input_field_font-size: $plato-form_component_field_font-size !default;
@@ -28,6 +29,7 @@ $plato-form_combo_dropdown_value_color_hover: $color-neutral-white !default;
 			.input_container, %plato-form_combo_input_container {
 				.input_field, %plato-form_combo_input_container_field {
 					border: $plato-form_combo_input_field_border;
+					border-radius: $plato-form_combo_input_field_border-radius;
 					display: $plato-form_combo_input_field_display;
 					font-family: $plato-form_combo_input_field_font-family;
 					font-size: $plato-form_combo_input_field_font-size;

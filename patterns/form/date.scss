@@ -114,7 +114,7 @@ $plato-form_date-picker_table_day_text-decoration: none !default;
 			}
 			.date-picker_table_body, %plato-form_date-picker_table_body {
 				background-color: $plato-form_date-picker_table_body_background;
-				.date_picker_day, %plato-form_date_picker_day {
+				.date-picker_day, %plato-form_date-picker_day {
 					color: $plato-form_date-picker_table_day_color;
 					text-decoration: $plato-form_date-picker_table_day_text-decoration;
 				}
