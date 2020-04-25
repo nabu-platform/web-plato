@@ -5,8 +5,10 @@
 
 // modal
 $plato-modal_background: $color-neutral-white !default;
+$plato-modal_border-radius: $border-radius !default;
 $plato-modal_color: color-tint("primary", "darkest") !default;
 $plato-modal_padding: spacing("ml") !default;
+$plato-modal_min-width: 32rem !default;
 // title 
 $plato-modal_title_background: color-tint("primary", "lightest") !default;
 $plato-modal_title_color: color-tint("primary", "darkest") !default;
@@ -31,7 +33,15 @@ $plato-modal_actions_border-top: solid 1px color-tint("neutral", "light");
 .plato-modal, %plato-modal {
 	@extend %layer-level-low;
 	background-color: $plato-modal_background;
+	border-radius: $plato-modal_border-radius;
 	color: $plato-modal_color;
+	max-height: calc(100vh - 2rem);
+    overflow: auto;
+	padding: $plato-modal_padding;
+	min-width: $plato-modal_min-width;
+	@include media("<=#{$plato-modal_min-width}") {
+		min-width: auto
+	}
 	.plato-modal_title, %plato-modal_title {
 		@extend %h5;
 		align-items: baseline;
