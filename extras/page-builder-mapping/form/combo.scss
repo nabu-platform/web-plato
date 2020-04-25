@@ -9,22 +9,30 @@
 
 .n-form {
 	.n-form-combo {
+		@extend %plato-form_combo;
 		extends: ".plato-form_combo";
 		.n-input-combo {
+			@extend %plato-form_combo_input;
 			extends: ".plato-form_combo_input";
 			.n-input-combo-input-container {
+				@extend %plato-form_combo_input_container;
 				extends: ".input_container";
 				.n-input-combo-input {
+					@extend %plato-form_combo_input_container_field;
 					extends: ".input_field";
 				}
 				.n-icon {
+					@extend %plato-form_combo_input_container_icon;
 					extends: ".input_icon";
 				}
 				.n-input-combo-dropdown {
+					@extend  %plato-form_combo_dropdown;
 					extends: ".combo_dropdown";
 					.n-input-combo-dropdown-value {
+						@extend  %plato-form_combo_dropdown_value;
 						extends: ".dropdown_value";
 						&.pondering {
+							@extend  %plato-form_combo_dropdown_value_selected;
 							extends: ".selected";
 						}
 					}
@@ -33,6 +41,21 @@
 			.n-form-combo-bottom {
 				display: none;
 			}
+		}
+	}
+}
+
+.n-form {
+	.combo-filter.n-input-combo {
+		.n-input-combo-label-container {
+			background: $color-neutral-white;
+			margin-right: -0.25rem;
+			border-style: solid;
+			border-radius: $border-radius 0 0 $border-radius;
+			z-index: 2;
+		}
+		.n-form-component {
+			margin: 0;
 		}
 	}
 }

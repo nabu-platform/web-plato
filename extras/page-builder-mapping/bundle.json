@@ -1,11 +1,11 @@
 {
-	"name": "web-plato--extras--page-builder-mapping",
-	"resources": {
-		"reset.scss": {
-			"url": "reset.scss"
-		},
-		"prompt.scss": {
-			"url": "prompt.scss"
+    "name": "web-plato--extras--page-builder-mapping",
+    "resources": {
+        "reset.scss": {
+            "url": "reset.scss"
+        },
+        "prompt.scss": {
+            "url": "prompt.scss"
         },
         "form": {
             "checkbox.scss": {
@@ -20,9 +20,12 @@
             "form.scss": {
                 "url": "form/form.scss"
             },
+            "form-section.scss": {
+                "url": "form/form-section.scss"
+            },
             "radio.scss": {
                 "url": "form/radio.scss"
             }
         }
-	}
+    }
 }

@@ -1,0 +1,13 @@
+$plato-form_section_row_margin: 0.5rem;
+
+
+.n-form-section.row {
+	align-items: center;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	margin: calc(-1 * #{$plato-form_section_row_margin});
+		> .n-form-section {
+		margin: $plato-form_section_row_margin;
+	}
+}

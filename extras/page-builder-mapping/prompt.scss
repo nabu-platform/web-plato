@@ -1,6 +1,40 @@
 .n-prompt {
 	extends: ".plato-overlay-dark";
-	.n-prompt-content {
+	.n-prompt-content, .n-prompt-container {
 		@extend %plato-modal;
+	}
+}
+
+// confirm prompt
+
+.n-prompt {
+	.n-prompt-container {
+		.n-confirm {
+			background: none;
+			box-shadow: none;
+			margin: 0;
+			width: auto;
+			max-width: 32rem;
+			.n-confirm-content {
+				display: inline-block;
+				color: $font-color-copy;
+				font-size: $font-size-large;
+				margin: 0 0 1rem;
+				padding: 2rem 1rem;
+				width: auto;
+			}
+			.n-confirm-buttons {
+				padding: 1rem;
+				text-align: right;
+				.cancel {
+					@include button-generator($style: "ghost");
+					margin-bottom: 0;
+				}
+			}
+			@include media("<=32rem") {
+				width: calc(100vw - 2rem);
+				max-width: none;
+			}
+		}
 	}
 }

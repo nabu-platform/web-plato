@@ -1,50 +1,61 @@
 // date wrapper
 
-#main {
-	.n-form {
-		.n-form-date-input {
-			extends: ".plato-form_date-component";
-			.n-form-input-wrapper {
-				extends: ".component_field-wrapper";
-				.field {
-					extends: ".component_field";
-				}
-				.n-form-date-icon {
-					extends: ".field_date-icon";
-				}
-				.n-input-result {
-					display: none;
-				}
+.n-form {
+	.n-form-date-input {
+		// @extend %plato-form_date-component;
+		extends: ".plato-form_date-component";
+		.n-form-input-wrapper {
+			// @extend %plato-form_component_field-wrapper;
+			extends: ".component_field-wrapper";
+			.field {
+				// @extend %plato-form_component_field;
+				extends: ".component_field";
+			}
+			.n-form-date-icon {
+				// @extend %plato-form_component_field_date-icon;
+				extends: ".field_date-icon";
+			}
+			.n-input-result {
+				display: none;
 			}
 		}
 	}
-	
-	.n-form-date-input.n-form-valid {
-		extends: ".component_valid";
-	}
-	.n-form-date-input.n-form-invalid {
-		extends: ".component_invalid";
-	}
-	
-	.n-form .n-input-date {
-		extends: ".plato-form_date-picker";
-		.table {
-			extends: ".date-picker_table";
-			caption {
-				extends: ".date-picker_table_caption";
-			}
-			head {
-				extends: ".date-picker_table_head";
-			}
-			body {
-				extends: ".date-picker_table_body";
-				.n-input-date-label {
-					extends: ".date_picker_day";
-				}
+}
+
+.n-form-date-input.n-form-valid {
+	// @extend %plato-form_date-component_valid;
+	extends: ".component_valid";
+}
+.n-form-date-input.n-form-invalid {
+	// @extend %plato-form_date-component_invalid;
+	extends: ".component_invalid";
+}
+
+.n-form .n-input-date {
+	// @extend %plato-form_date-picker;
+	extends: ".plato-form_date-picker";
+	.table {
+		// @extend %plato-form_date-picker_table;
+		extends: ".date-picker_table";
+		caption {
+			// @extend %plato-form_date-picker_table_caption;
+			extends: ".date-picker_table_caption";
+		}
+		head {
+			// @extend %plato-form_date-picker_table_head;
+			extends: ".date-picker_table_head";
+		}
+		body {
+			// @extend %plato-form_date-picker_table_body;
+			extends: ".date-picker_table_body";
+			.n-input-date-label {
+				// @extend %plato-form_date-picker_day;
+				extends: ".date_picker_day";
 			}
 		}
-		.n-input-date-legend {
-			extends: ".date-picker_legend";
-		}
+	}
+	.n-input-date-legend {
+		// @extend %plato-form_date-picker_legend;
+		extends: ".date-picker_legend";
 	}
 }
