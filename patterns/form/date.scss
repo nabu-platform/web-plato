@@ -1,5 +1,4 @@
 // The date component inherits most functionality from the basic text field component
-$plato-form_date-component_margin: 0 !default;
 
 //// field - icon
 $plato-form_date-component_field_icon_background: transparent !default;
@@ -32,7 +31,6 @@ $plato-form_date-component_field_icon_invalid_font-weight: $font-icon-weight !de
 
 .plato-form, %plato-form {
 	.plato-form_date-component, %plato-form_date-component {
-		margin: $plato-form_date-component_margin;
 		.component_field-wrapper, %plato-form_component_field-wrapper {
 			.field_icon-wrapper, %plato-form_component_field_icon-wrapper {
 				.field_date-icon, %plato-form_component_field_date-icon {
