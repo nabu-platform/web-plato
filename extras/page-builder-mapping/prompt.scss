@@ -1,7 +1,7 @@
 .n-prompt {
-	extends: ".plato-overlay-dark";
+	@include plato-overlay-dark;
 	.n-prompt-content, .n-prompt-container {
-		@extend %plato-modal;
+		@include plato-modal;
 	}
 }
 

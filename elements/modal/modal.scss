@@ -30,8 +30,11 @@ $plato-modal_actions_padding: $plato-modal_padding 0;
 $plato-modal_actions_border-top: solid 1px color-tint("neutral", "light");
 
 
-.plato-modal, %plato-modal {
-	@extend %layer-level-low;
+
+//-------- MIXINS 
+
+@mixin plato-modal {
+	@include layer-level("low");
 	background-color: $plato-modal_background;
 	border-radius: $plato-modal_border-radius;
 	color: $plato-modal_color;
@@ -42,66 +45,105 @@ $plato-modal_actions_border-top: solid 1px color-tint("neutral", "light");
 	@include media("<=#{$plato-modal_min-width}") {
 		min-width: auto
 	}
+}
+@mixin plato-modal_title {
+	@include heading(5);
+	align-items: baseline;
+	background-color: $plato-modal_title_background;
+	color: $plato-modal_title_color;
+	display: flex;
+	margin-bottom: $plato-modal_title_margin_bottom;
+	justify-content: space-between;
+	padding: $plato-modal_title_padding;
+}
+@mixin plato-modal_close {
+	cursor: pointer;
+}
+@mixin plato-modal_close_before {
+	color: color-tint("secondary", "darkest");
+	font-size: $plato-modal_close_size;
+}
+@mixin plato-modal_close_icon_before {
+	color: color-tint("secondary", "darkest");
+	font-size: $plato-modal_close_size;
+}
+@mixin plato-modal_image {
+	height: $plato-modal_image_size;
+	margin: 0 auto;
+	width: $plato-modal_image_size;
+}
+@mixin plato-modal_description {
+	@include plato-paragraph;
+	color: $plato-modal_description_color;
+	margin-bottom: $plato-modal_description_margin_bottom;
+	padding: $plato-modal_description_padding;
+}
+@mixin plato-modal_input {
+	padding: $plato-modal_input_padding;
+	.n-form-component {
+		margin: 0;
+		.n-form-label-wrapper {
+			color: $color-neutral-black;
+			font-weight: bold; //semibold
+			margin-bottom: spacing("s");
+		}
+		.n-form-input-wrapper {
+			input {
+				@include heading(7);
+				font-weight: normal;
+				margin: 0;
+				width: 100%;
+			}
+		}
+	}
+}
+@mixin plato-modal_actions {
+	border-top: $plato-modal_actions_border-top;
+	display: flex;
+	margin: $plato-modal_actions_margin;
+	justify-content: flex-end;
+	padding: $plato-modal_actions_padding;
+	button, .button {
+		margin: 0;
+	}
+}
+
+@mixin plato-overlay-dark {
+	background-color: rgba(color-tint("neutral", "dark"), $color-opacity-high);
+}
+@mixin plato-overlay-light {
+	background-color: rgba($color-neutral-white, $color-opacity-high);
+}
+
+
+
+//-------- DEFINITIONS
+
+.plato-modal, %plato-modal {
+	@include plato-modal;
 	.plato-modal_title, %plato-modal_title {
-		@extend %h5;
-		align-items: baseline;
-		background-color: $plato-modal_title_background;
-		color: $plato-modal_title_color;
-		display: flex;
-		margin-bottom: $plato-modal_title_margin_bottom;
-		justify-content: space-between;
-		padding: $plato-modal_title_padding;
+		@include plato-modal_title;
 		.plato-modal_close {
-			cursor: pointer;
+			@include plato-modal_close;
 			&:before {
-				color: color-tint("secondary", "darkest");
-				font-size: $plato-modal_close_size;
+				@include plato-modal_close_before;
 			}
 			.icon:before {
-				color: color-tint("secondary", "darkest");
-				font-size: $plato-modal_close_size;
+				@include plato-modal_close_icon_before;
 			}
 		}
 	}
 	.plato-modal_image, %plato-modal_image {
-		height: $plato-modal_image_size;
-		margin: 0 auto;
-		width: $plato-modal_image_size;
+		@include plato-modal_image;
 	}
 	.plato-modal_description, %plato-modal_description {
-		@extend %paragraph;
-		color: $plato-modal_description_color;
-		margin-bottom: $plato-modal_description_margin_bottom;
-		padding: $plato-modal_description_padding;
+		@include plato-modal_description;
 	}
 	.plato-modal_input {
-		padding: $plato-modal_input_padding;
-		.n-form-component {
-			margin: 0;
-			.n-form-label-wrapper {
-				color: $color-neutral-black;
-				font-weight: bold; //semibold
-				margin-bottom: spacing("s");
-			}
-			.n-form-input-wrapper {
-				input {
-					@extend %h7;
-					font-weight: normal;
-					margin: 0;
-					width: 100%;
-				}
-			}
-		}
+		@include plato-modal_input;
 	}
 	.plato-modal_actions, %plato-modal_actions {
-		border-top: $plato-modal_actions_border-top;
-		display: flex;
-		margin: $plato-modal_actions_margin;
-		justify-content: flex-end;
-		padding: $plato-modal_actions_padding;
-		button, .button {
-			margin: 0;
-		}
+		@include plato-modal_actions;
 	}
 	ul.page-actions {
 		margin: 0;
@@ -110,9 +152,9 @@ $plato-modal_actions_border-top: solid 1px color-tint("neutral", "light");
 }
 
 .plato-overlay-dark, %plato-overlay-dark {
-	background-color: rgba(color-tint("neutral", "dark"), $color-opacity-high);
+	@include plato-overlay-dark;
 }
 
 .plato-overlay-light, %plato-overlay-light {
-	background-color: rgba($color-neutral-white, $color-opacity-high);
+	@include plato-overlay-light;
 }
