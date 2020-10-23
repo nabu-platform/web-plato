@@ -12,36 +12,57 @@ $font-family-copy: $font-family !default;
 $font-line-height-copy: 1.25 !default; // ! always use numbers only !
 $font-weight-copy: $font-weight !default;
 
-body, * {
+
+//-------- MIXINS 
+
+@mixin font-base {
 	font-size: $font-size-base;
 }
+@mixin font-large {
+	font-size: $font-size-large;
+}
+@mixin font-small {
+	font-size: $font-size-small;
+}
+@mixin font-tiny {
+	font-size: $font-size-tiny;
+}
 
-%font-base {
-	font-size: $font-size-base; }
-
-%font-large {
-	font-size: $font-size-large; }
-
-%font-small {
-	font-size: $font-size-small; }
-
-%font-tiny {
-	font-size: $font-size-tiny; }
-
-p, %paragraph, .plato-paragraph {
+@mixin plato-paragraph {
     color: $font-color-copy;
 	font-size: $font-size-base;
     font-weight: $font-weight-copy;
     line-height: $font-line-height-copy;
 	&.large {
-		@extend %font-large;
+		@include font-large;
 	}
 	&.small {
-		@extend %font-small;
+		@include font-small;
 	}
 	&.tiny {
-		@extend %font-tiny;
+		@include font-tiny;
 	}
+}
+
+body, * {
+	font-size: $font-size-base;
+}
+
+%font-base {
+	@include font-base;
+}
+%font-large {
+	@include font-large;
+}
+%font-small {
+	@include font-small;
+}
+%font-tiny {
+	@include font-tiny;
+}
+
+p, %paragraph, .plato-paragraph {
+	@include plato-paragraph;
 }
 
 .text-center {
