@@ -164,86 +164,278 @@ $plato-form_component_messages_valid_color: color-tint("success", "dark") !defau
 $plato-form_component_messages_icon_valid_content: $font-icon-content-success !default;
 
 
+//-------- MIXINS 
+
+@mixin plato-form {
+	
+}
+
+@mixin plato-form_component {
+	display: $plato-form_component_display;
+	margin: $plato-form_component_margin;
+	position: relative;
+	width: $plato-form_component_width;
+	min-width: $plato-form_component_min-width;
+}
+
+//// label wrapper
+@mixin plato-form_component_label-wrapper {
+	color: $plato-form_component_label-wrapper_color;
+	display: $plato-form_component_label-wrapper_display;
+	font-size: $plato-form_component_label-wrapper_font-size;
+	font-weight: $plato-form_component_label-wrapper_font-weight;
+	margin: $plato-form_component_label-wrapper_margin;
+	text-align: $plato-form_component_label-wrapper_align;
+}
+@mixin plato-form_component_label {
+	color: $plato-form_component_label_color;
+	display: $plato-form_component_label_display;
+	font-size: $plato-form_component_label_font-size;
+	font-weight: $plato-form_component_label_font-weight;
+	margin: $plato-form_component_label_margin;
+	text-align: $plato-form_component_label_align;
+}
+@mixin plato-form_component_label-info {
+	color: $plato-form_component_label-info_color;
+	display: $plato-form_component_label-info_display;
+	font-size: $plato-form_component_label_font-size;
+	font-weight: $plato-form_component_label-info_font-weight;
+	margin: $plato-form_component_label-info_margin;
+	text-align: $plato-form_component_label-info_align;
+}
+@mixin plato-form_component_label-info_icon {
+	font-size: $plato-form_component_label-info_icon_font-size;
+}
+@mixin plato-form_component_label-info_content {
+	font-size: $plato-form_component_label-info_content_font-size;
+}
+
+//// field wrapper 
+@mixin plato-form_component_field-wrapper {
+	position: $plato-form_component_field-wrapper_position;
+}
+@mixin plato-form_component_field {
+	border: $plato-form_component_field_border;
+	display: $plato-form_component_field_display;
+	font-family: $plato-form_component_field_font-family;
+	font-size: $plato-form_component_field_font-size;
+	padding: $plato-form_component_field_padding;
+	width: $plato-form_component_field_width;
+}
+@mixin plato-form_component_field_icon_text {
+	align-items: $plato-form_component_field_icon-wrapper_align-items;
+	display: $plato-form_component_field_icon-wrapper_display;
+	flex-flow: $plato-form_component_field_icon-wrapper_flex-flow;
+	justify-content: $plato-form_component_field_icon-wrapper_justify-content;
+	height: $plato-form_component_field_icon-wrapper_height;
+	position: $plato-form_component_field_icon-wrapper_position;
+	top: $plato-form_component_field_icon-wrapper_position_top;
+	bottom: $plato-form_component_field_icon-wrapper_position_bottom;
+	left: $plato-form_component_field_icon-wrapper_position_left;
+	right: $plato-form_component_field_icon-wrapper_position_right;
+	width: $plato-form_component_field_icon-wrapper_width;
+	
+	background-color: $plato-form_component_field_icon-wrapper_text_background;
+	color: $plato-form_component_field_icon-wrapper_text_color;
+	// height: $plato-form_component_field_icon-wrapper_text_height;
+	line-height: $plato-form_component_field_icon-wrapper_text_line-height;
+	text-align: $plato-form_component_field_icon-wrapper_text_align;
+	transform: $plato-form_component_field_icon-wrapper_text_transform;
+	// width: $plato-form_component_field_icon-wrapper_text_width;
+}
+@mixin plato-form_component_field_icon {
+	color: $plato-form_component_field_icon_color;
+	height: $plato-form_component_field_icon_height;
+	width: $plato-form_component_field_icon_width;
+}
+@mixin plato-form_component_field_icon_before {
+	font-size: $plato-form_component_field_icon_font-size;
+	font-family: $plato-form_component_field_icon_font-family;
+	font-weight: $plato-form_component_field_icon_font-weight;
+}
+@mixin plato-form_component_field_icon_follows-label {
+	top: calc(2.7 * #{$plato-form_component_field_icon-wrapper_position_top});
+}
+
+//// description 
+@mixin plato-form_component_description-after {
+	color: $plato-form_component_description-after_color;
+	display: $plato-form_component_description-after_display;
+	font-size: $plato-form_component_description-after_font-size;
+	font-weight: $plato-form_component_description-after_font-weight;
+	margin: $plato-form_component_description-after_margin;
+	text-align: $plato-form_component_description-after_align;
+}
+@mixin plato-form_component_description-after_icon {
+	color: $plato-form_component_description-after_icon_color;
+	font-size: $plato-form_component_description-after_icon_font-size;
+}
+@mixin plato-form_component_description-after_label {
+	color: $plato-form_component_description-after_label_color;
+	display: $plato-form_component_description-after_label_display;
+	font-size: $plato-form_component_description-after_label_font-size;
+	font-weight: $plato-form_component_description-after_label_font-weight;
+	margin: $plato-form_component_description-after_label_margin;
+	text-align: $plato-form_component_description-after_label_align;
+}
+
+//// messages 
+@mixin plato-form_component_messages {
+	font-size: $plato-form_component_messages_font-size;
+	text-align: $plato-form_component_messages_align;
+}
+@mixin plato-form_component_messages_message {
+	color: inherit;
+	margin: $plato-form_component_messages_message_margin;
+	padding: $plato-form_component_messages_message_padding;
+	position: relative;
+}
+@mixin plato-form_component_messages_message_title {
+	color: inherit;
+}
+
+
+/// INVALID 
+
+//// label 
+@mixin plato-form_component_invalid {
+	
+}
+@mixin plato-form_component_invalid_label-wrapper {
+	color: $plato-form_component_label-wrapper_invalid_color;
+}
+@mixin plato-form_component_invalid_label {
+	color: $plato-form_component_label-info_invalid_color;
+}
+@mixin plato-form_component_invalid_label-info {
+	color: $plato-form_component_label_invalid_color;
+}
+
+//// field 
+@mixin plato-form_component_invalid_field-wrapper {
+	
+}
+@mixin plato-form_component_invalid_field {
+	border: $plato-form_component_field_invalid_border;
+	color: $plato-form_component_field_invalid_color;
+}
+@mixin plato-form_component_invalid_field_icon-text {
+	background-color: $plato-form_component_field_icon-wrapper_text_invalid_background;
+	color: $plato-form_component_field_icon-wrapper_text_invalid_color;
+}
+@mixin plato-form_component_invalid_field_icon {
+	color: $plato-form_component_field_icon_invalid_color;
+}
+@mixin plato-form_component_invalid_validation_icon {
+	color: $plato-form_component_validation_icon_invalid_color;
+}
+@mixin plato-form_component_invalid_validation_icon_before {
+	content: $plato-form_component_validation_icon_invalid_content;
+	font-size: $plato-form_component_field_icon_font-size;
+	font-family: $plato-form_component_field_icon_font-family;
+	font-weight: $plato-form_component_field_icon_font-weight;
+}
+
+//// messages 
+@mixin plato-form_component_invalid_messages {
+	
+}
+@mixin plato-form_component_invalid_messages_message {
+	color: $plato-form_component_messages_invalid_color;
+}
+@mixin plato-form_component_invalid_messages_message_before {
+	content: $plato-form_component_messages_icon_invalid_content;
+	color: $plato-form_component_messages_invalid_color;
+	font-family: $plato-form_component_messages_icon_font-family;
+	font-size: $plato-form_component_messages_icon_font-size;
+	font-weight: $plato-form_component_messages_icon_font-weight;
+	position: $plato-form_component_messages_icon_position;
+	top: $plato-form_component_messages_icon_position_top;
+	bottom: $plato-form_component_messages_icon_position_bottom;
+	right: $plato-form_component_messages_icon_position_right;
+	left: $plato-form_component_messages_icon_position_left;
+}
+
+
+/// VALID 
+
+//// label 
+@mixin plato-form_component_valid {
+	
+}
+@mixin plato-form_component_valid_label-wrapper {
+	color: $plato-form_component_label-wrapper_valid_color;
+}
+@mixin plato-form_component_valid_label {
+	color: $plato-form_component_label-info_valid_color;
+}
+@mixin plato-form_component_valid_label-info {
+	color: $plato-form_component_label_valid_color;
+}
+
+//// field 
+@mixin plato-form_component_valid_field-wrapper {
+	
+}
+@mixin plato-form_component_valid_field {
+	border: $plato-form_component_field_valid_border;
+	color: $plato-form_component_field_valid_color;
+}
+@mixin plato-form_component_valid_field_icon-text {
+	background-color: $plato-form_component_field_icon-wrapper_text_valid_background;
+	color: $plato-form_component_field_icon-wrapper_text_valid_color;
+}
+@mixin plato-form_component_valid_field_icon {
+	color: $plato-form_component_field_icon_valid_color;
+}
+@mixin plato-form_component_valid_validation_icon {
+	color: $plato-form_component_validation_icon_valid_color;
+}
+@mixin plato-form_component_valid_validation_icon_before {
+	content: $plato-form_component_validation_icon_valid_content;
+	font-size: $plato-form_component_field_icon_font-size;
+	font-family: $plato-form_component_field_icon_font-family;
+	font-weight: $plato-form_component_field_icon_font-weight;
+}
+
+
+//-------- DEFINITIONS
+
 .plato-form, %plato-form {
+	@include plato-form;
 	.plato-form_component, %plato-form_component {
-		display: $plato-form_component_display;
-		margin: $plato-form_component_margin;
-		position: relative;
-		width: $plato-form_component_width;
-		min-width: $plato-form_component_min-width;
+		@include plato-form_component;
 		&.clear-gutters {
 			margin-bottom: 0;
 		}
 		.component_label-wrapper, %plato-form_component_label-wrapper {
-				color: $plato-form_component_label-wrapper_color;
-				display: $plato-form_component_label-wrapper_display;
-				font-size: $plato-form_component_label-wrapper_font-size;
-				font-weight: $plato-form_component_label-wrapper_font-weight;
-				margin: $plato-form_component_label-wrapper_margin;
-				text-align: $plato-form_component_label-wrapper_align;
+			@include plato-form_component_label-wrapper;
 			.component_label, %plato-form_component_label {
-				color: $plato-form_component_label_color;
-				display: $plato-form_component_label_display;
-				font-size: $plato-form_component_label_font-size;
-				font-weight: $plato-form_component_label_font-weight;
-				margin: $plato-form_component_label_margin;
-				text-align: $plato-form_component_label_align;
+				@include plato-form_component_label;
 			}
 			.component_label-info, %plato-form_component_label-info {
-				color: $plato-form_component_label-info_color;
-				display: $plato-form_component_label-info_display;
-				font-size: $plato-form_component_label_font-size;
-				font-weight: $plato-form_component_label-info_font-weight;
-				margin: $plato-form_component_label-info_margin;
-				text-align: $plato-form_component_label-info_align;
+				@include plato-form_component_label-info;
 				.component_label-info_icon {
-					font-size: $plato-form_component_label-info_icon_font-size;
+					@include plato-form_component_label-info_icon;
 				}
 				.component_label-info_content {
-					font-size: $plato-form_component_label-info_content_font-size;
+					@include plato-form_component_label-info_content;
 				}
 			}
 		}
 		.component_field-wrapper, %plato-form_component_field-wrapper {
-			position: $plato-form_component_field-wrapper_position;
+			@include plato-form_component_field-wrapper;
 			.component_field, %plato-form_component_field {
-				border: $plato-form_component_field_border;
-				display: $plato-form_component_field_display;
-				font-family: $plato-form_component_field_font-family;
-				font-size: $plato-form_component_field_font-size;
-				padding: $plato-form_component_field_padding;
-				width: $plato-form_component_field_width;
+				@include plato-form_component_field;
 			}
 			
 				.field_icon_text {
-					align-items: $plato-form_component_field_icon-wrapper_align-items;
-					display: $plato-form_component_field_icon-wrapper_display;
-					flex-flow: $plato-form_component_field_icon-wrapper_flex-flow;
-					justify-content: $plato-form_component_field_icon-wrapper_justify-content;
-					height: $plato-form_component_field_icon-wrapper_height;
-					position: $plato-form_component_field_icon-wrapper_position;
-					top: $plato-form_component_field_icon-wrapper_position_top;
-					bottom: $plato-form_component_field_icon-wrapper_position_bottom;
-					left: $plato-form_component_field_icon-wrapper_position_left;
-					right: $plato-form_component_field_icon-wrapper_position_right;
-					width: $plato-form_component_field_icon-wrapper_width;
-					
-					background-color: $plato-form_component_field_icon-wrapper_text_background;
-					color: $plato-form_component_field_icon-wrapper_text_color;
-					// height: $plato-form_component_field_icon-wrapper_text_height;
-					line-height: $plato-form_component_field_icon-wrapper_text_line-height;
-					text-align: $plato-form_component_field_icon-wrapper_text_align;
-					transform: $plato-form_component_field_icon-wrapper_text_transform;
-					// width: $plato-form_component_field_icon-wrapper_text_width;
+					@include plato-form_component_field_icon_text;
 					
 					.field_icon, %plato-form_component_field_icon {
-						color: $plato-form_component_field_icon_color;
-						height: $plato-form_component_field_icon_height;
-						width: $plato-form_component_field_icon_width;
+						@include plato-form_component_field_icon;
 						&:before {
-							font-size: $plato-form_component_field_icon_font-size;
-							font-family: $plato-form_component_field_icon_font-family;
-							font-weight: $plato-form_component_field_icon_font-weight;
+							@include plato-form_component_field_icon_before;
 						}
 					}
 				}
@@ -281,39 +473,24 @@ $plato-form_component_messages_icon_valid_content: $font-icon-content-success !d
 			// }
 			// TODO : what to do?
 			.field_icon, %plato-form_component_label ~ %plato-form_component_field_icon {
-				top: calc(2.7 * #{$plato-form_component_field_icon-wrapper_position_top});
+				@include plato-form_component_field_icon_follows-label;
 			}
 		}
 		.component_description-after, %plato-form_component_description-after {
-			color: $plato-form_component_description-after_color;
-			display: $plato-form_component_description-after_display;
-			font-size: $plato-form_component_description-after_font-size;
-			font-weight: $plato-form_component_description-after_font-weight;
-			margin: $plato-form_component_description-after_margin;
-			text-align: $plato-form_component_description-after_align;
+			@include plato-form_component_description-after;
 			.description-after_icon, %plato-form_component_description-after_icon {
-				color: $plato-form_component_description-after_icon_color;
-				font-size: $plato-form_component_description-after_icon_font-size;
+				@include plato-form_component_description-after_icon;
 			}
 			.description-after_label, %plato-form_component_description-after_label {
-				color: $plato-form_component_description-after_label_color;
-				display: $plato-form_component_description-after_label_display;
-				font-size: $plato-form_component_description-after_label_font-size;
-				font-weight: $plato-form_component_description-after_label_font-weight;
-				margin: $plato-form_component_description-after_label_margin;
-				text-align: $plato-form_component_description-after_label_align;
+				@include plato-form_component_description-after_label;
 			}
 		}
-		.component_messages, %plato-form_component_messages {;
-			font-size: $plato-form_component_messages_font-size;
-			text-align: $plato-form_component_messages_align;
+		.component_messages, %plato-form_component_messages {
+			@include plato-form_component_messages;
 			.component_message, %plato-form_component_messages_message {
-				color: inherit;
-				margin: $plato-form_component_messages_message_margin;
-				padding: $plato-form_component_messages_message_padding;
-				position: relative;
+				@include plato-form_component_messages_message;
 				.message_title, %plato-form_component_messages_message_title {
-					color: inherit;
+					@include plato-form_component_messages_message_title;
 				}
 			}
 		}
@@ -322,51 +499,40 @@ $plato-form_component_messages_icon_valid_content: $font-icon-content-success !d
 
 /// invalid 
 .plato-form .plato-form_component.component_invalid, %plato-form_component_invalid {
+	@include plato-form_component_invalid;
 	.component_label-wrapper {
-		color: $plato-form_component_label-wrapper_invalid_color;
+		@include plato-form_component_invalid_label-wrapper;
 		.component_label {
-			color: $plato-form_component_label-info_invalid_color;
+			@include plato-form_component_invalid_label;
 		}
 		.component_label-info {
-			color: $plato-form_component_label_invalid_color;
+			@include plato-form_component_invalid_label-info;
 		}
 	}
 	.component_field-wrapper {
+		@include plato-form_component_invalid_field-wrapper;
 		.component_field {
-			border: $plato-form_component_field_invalid_border;
-			color: $plato-form_component_field_invalid_color;
+			@include plato-form_component_invalid_field;
 		}
 		.field_icon_text {
-			background-color: $plato-form_component_field_icon-wrapper_text_invalid_background;
-			color: $plato-form_component_field_icon-wrapper_text_invalid_color;
+			@include plato-form_component_invalid_field_icon_text;
 			.field_icon {
-				color: $plato-form_component_field_icon_invalid_color;
+				@include plato-form_component_invalid_field_icon;
 			}
 			.validation_icon {
-				color: $plato-form_component_validation_icon_invalid_color;
+				@include plato-form_component_invalid_validation_icon;
 				&:before {
-					content: $plato-form_component_validation_icon_invalid_content;
-					font-size: $plato-form_component_field_icon_font-size;
-					font-family: $plato-form_component_field_icon_font-family;
-					font-weight: $plato-form_component_field_icon_font-weight;
+					@include plato-form_component_invalid_validation_icon_before;
 				}
 			}
 		}
 	}
 	.component_messages {
-		color: $plato-form_component_messages_invalid_color;
+		@include plato-form_component_invalid_messages;
 		.component_message {
+			@include plato-form_component_invalid_messages_message;
 			&:before {
-				content: $plato-form_component_messages_icon_invalid_content;
-				color: $plato-form_component_messages_invalid_color;
-				font-family: $plato-form_component_messages_icon_font-family;
-				font-size: $plato-form_component_messages_icon_font-size;
-				font-weight: $plato-form_component_messages_icon_font-weight;
-				position: $plato-form_component_messages_icon_position;
-				top: $plato-form_component_messages_icon_position_top;
-				bottom: $plato-form_component_messages_icon_position_bottom;
-				right: $plato-form_component_messages_icon_position_right;
-				left: $plato-form_component_messages_icon_position_left;
+				@include plato-form_component_invalid_messages_message_before;
 			}
 		}
 	}
@@ -375,33 +541,30 @@ $plato-form_component_messages_icon_valid_content: $font-icon-content-success !d
 
 /// valid 
 .plato-form .plato-form_component.component_valid, %plato-form_component_valid {
+	@include plato-form_component_valid;
 	.component_label-wrapper {
-		color: $plato-form_component_label-wrapper_valid_color;
+		@include plato-form_component_valid_label-wrapper;
 		.component_label {
-			color: $plato-form_component_label-info_valid_color;
+			@include plato-form_component_valid_label;
 		}
 		.component_label-info {
-			color: $plato-form_component_label_valid_color;
+			@include plato-form_component_valid_label-info;
 		}
 	}
 	.component_field-wrapper {
+		@include plato-form_component_valid_field-wrapper;
 		.component_field {
-			border: $plato-form_component_field_valid_border;
-			color: $plato-form_component_field_valid_color;
+			@include plato-form_component_valid_field;
 		}
 		.field_icon_text {
-			background-color: $plato-form_component_field_icon-wrapper_text_valid_background;
-			color: $plato-form_component_field_icon-wrapper_text_valid_color;
+			@include plato-form_component_valid_field_icon_text;
 			.field_icon {
-				color: $plato-form_component_field_icon_valid_color;
+				@include plato-form_component_valid_field_icon;
 			}
 			.validation_icon {
-				color: $plato-form_component_validation_icon_valid_color;
+				@include plato-form_component_valid_validation_icon;
 				&:before {
-					content: $plato-form_component_validation_icon_valid_content;
-					font-size: $plato-form_component_field_icon_font-size;
-					font-family: $plato-form_component_field_icon_font-family;
-					font-weight: $plato-form_component_field_icon_font-weight;
+					@include plato-form_component_valid_validation_icon_before;
 				}
 			}
 		}

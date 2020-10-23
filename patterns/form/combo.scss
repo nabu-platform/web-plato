@@ -21,36 +21,72 @@ $plato-form_combo_dropdown_value_color_selected: $color-neutral-white !default;
 $plato-form_combo_dropdown_value_color_hover: $color-neutral-white !default;
 
 
+
+//-------- MIXINS
+
+//// date 
+@mixin plato-form_combo {
+	width: $plato-form_combo_width;
+}
+@mixin plato-form_combo_input {
+	color: $plato-form_combo_input_color;
+}
+@mixin plato-form_combo_input_container {
+	
+}
+@mixin plato-form_combo_input_container_field {
+	border: $plato-form_combo_input_field_border;
+	border-radius: $plato-form_combo_input_field_border-radius;
+	display: $plato-form_combo_input_field_display;
+	font-family: $plato-form_combo_input_field_font-family;
+	font-size: $plato-form_combo_input_field_font-size;
+	padding: $plato-form_combo_input_field_padding;
+	width: $plato-form_combo_input_field_width;
+}
+@mixin plato-form_combo_input_container_icon {
+	color: inherit;
+}
+@mixin plato-form_combo_dropdown {
+	background-color: $plato-form_combo_dropdown_background;
+}
+@mixin plato-form_combo_dropdown_value {
+	padding: $plato-form_combo_dropdown_value_padding;
+}
+@mixin plato-form_combo_dropdown_value_hover {
+	background-color: $plato-form_combo_dropdown_value_background_hover;
+	color: $plato-form_combo_dropdown_value_color_hover;
+}
+@mixin plato-form_combo_dropdown_value_selected {
+	background-color: $plato-form_combo_dropdown_value_background_selected;
+	color: $plato-form_combo_dropdown_value_color_selected;
+}
+
+
+//-------- DEFINITIONS
+
 .plato-form, %plato-form {
 	.plato-form_combo, %plato-form_combo {
-		width: $plato-form_combo_width;
+		@include plato-form_combo;
 		.plato-form_combo_input, %plato-form_combo_input {
-			color: $plato-form_combo_input_color;
+			@include plato-form_combo_input;
 			.input_container, %plato-form_combo_input_container {
+				@include plato-form_combo_input_container;
 				.input_field, %plato-form_combo_input_container_field {
-					border: $plato-form_combo_input_field_border;
-					border-radius: $plato-form_combo_input_field_border-radius;
-					display: $plato-form_combo_input_field_display;
-					font-family: $plato-form_combo_input_field_font-family;
-					font-size: $plato-form_combo_input_field_font-size;
-					padding: $plato-form_combo_input_field_padding;
-					width: $plato-form_combo_input_field_width;
+					@include plato-form_combo_input_container_field;
 				}
 				.input_icon, %plato-form_combo_input_container_icon {
-					color: inherit;
+					@include plato-form_combo_input_container_icon;
 					
 				}
 				.combo_dropdown, %plato-form_combo_dropdown {
-					background-color: $plato-form_combo_dropdown_background;
+					@include plato-form_combo_dropdown;
 					.dropdown_value, %plato-form_combo_dropdown_value {
-						padding: $plato-form_combo_dropdown_value_padding;
+						@include plato-form_combo_dropdown_value;
 						&:hover {
-							background-color: $plato-form_combo_dropdown_value_background_hover;
-							color: $plato-form_combo_dropdown_value_color_hover;
+							@include plato-form_combo_dropdown_value_hover;
 						}
 						&.selected, &.pondering, &%plato-form_combo_dropdown_value_selected {
-							background-color: $plato-form_combo_dropdown_value_background_selected;
-							color: $plato-form_combo_dropdown_value_color_selected;
+							@include plato-form_combo_dropdown_value_selected;
 						}
 					}
 				}
