@@ -27,7 +27,7 @@ $layers-levels-z: (
 	"middle": 20,
 	"middle-high": 25,
 	"high": 30
-);
+) !default;
 
 @function layers($level: "low") {
 	@if map-has-key($layers-levels, $level) {
