@@ -16,7 +16,7 @@ $layers-levels: (
 	"middle-high": $layer-level-middle-high,
 	"high": $layer-level-high,
 	"focus": $layer-level-focus
-);
+) !default;
 
 $layers-level-transition: box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
