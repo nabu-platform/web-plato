@@ -44,7 +44,7 @@ $layers-levels-z: (
 		@return map-get($layers-levels-z, $level);
 	}
 	@else {
-	    @warn "Unknown layers level z-index '#{$level}'.";
+	    // @warn "Unknown layers level z-index '#{$level}'.";
 	    @return null;
 	}
 }
