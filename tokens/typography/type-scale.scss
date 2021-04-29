@@ -44,7 +44,7 @@ $font-weight-copy: $font-weight !default;
 	}
 }
 
-body, * {
+body, html:root {
 	font-size: $font-size-base;
 }
 
