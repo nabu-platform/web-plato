@@ -261,7 +261,7 @@ $button-states-color-map: (
 	$color-map: $button-color-map;
 	@include button-generator-colors($color: $color, $style: $style, $size: $size, $color-map: $color-map);
 	
-	&:hover, &:focus, &:active, &:disabled {
+	&:hover, &:disabled {
 		$color-map: $button-states-color-map;
 		@include button-generator-colors($color: $color, $style: $style, $size: $size, $color-map: $color-map);
 	}
